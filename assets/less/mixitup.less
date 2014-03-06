@@ -107,7 +107,8 @@
 			width: 100%;
 			background-repeat: no-repeat;
 			background-size: 100% auto;
-			.transition-property( top );
+			.translate3d(0,0,0);
+			.transition-property( transform );
 			.transition-duration( .3s );
 			.transition-timing-function( ease-out );
 		}
@@ -124,11 +125,11 @@
 		&:hover {
 
 			.curtain-top {
-				top: -50%;
+				.translate( 0, -100% );
 			}
 
 			.curtain-bottom {
-				top: 100%;
+				.translate( 0, 100% );
 			}
 
 		}
