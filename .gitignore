@@ -5,8 +5,9 @@ sftp-config.json
 assets/css/*
 assets/fonts/*
 assets/js/*
+!assets/js/**/
+assets/js/vendor/*
 inc/vendor/*
-!assets/js/src/*
 !.gitignore
 
 # IDE
