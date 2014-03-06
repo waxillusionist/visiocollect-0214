@@ -9,7 +9,7 @@ function vc_opengraph() {
 	// no ogp on 404 pages
 	if( is_404() )
 		return;
-	
+
 	// default data
 	$ogp_data['url']          = home_url( '/' );
 	$ogp_data['site']         = trim( get_bloginfo( 'name', 'display' ) );
@@ -19,7 +19,7 @@ function vc_opengraph() {
 	$ogp_data['image']        = $ogp_data['url'].'logo-250x250.png';
 	$ogp_data['type']         = 'website';
 	$ogp_data['updated_time'] = false;
-	
+
 	// default single post/page
 	if( is_single() || is_page() ) {
 		$post = get_queried_object();
@@ -57,7 +57,7 @@ function vc_opengraph() {
 		if( $v!==false )
 			array_push( $output, '<meta property="og:'.$k.'" content="'.$v.'">' );
 	}
-	
+
 	// output
 	echo implode( $output, "\n" )."\n";
 }

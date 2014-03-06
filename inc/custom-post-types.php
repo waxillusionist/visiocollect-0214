@@ -23,7 +23,7 @@ function vc_custom_posts() {
 				'excerpt',
 				'custom-fields',
 				'revisions',
-				'page-attributes' 
+				'page-attributes'
 			)
 		)
 	);
@@ -31,7 +31,7 @@ function vc_custom_posts() {
 		'hierarchical' => true
 	));
 	register_taxonomy_for_object_type( 'spektrum_category', 'spektrum' );
-	
+
 }
 add_action( 'init', 'vc_custom_posts' );
 

@@ -4,7 +4,7 @@
 
 .gallery {
 	margin: @line-height-computed 0;
-	
+
 
 
 	/* =============================================================================
@@ -12,36 +12,36 @@
 	   ========================================================================== */
 
 	&.gallery-style-classic {
-	
+
 		.row {
 			margin: 0 -5px !important;
 		}
-		
+
 		.col {
 			padding: 5px !important;
 		}
-		
+
 		.gallery-item {
 			margin: 0 !important;
 			position: relative;
 			overflow: hidden;
-			
+
 			.gallery-icon {
-				
+
 				img {
 					width: 100%;
 					height: auto;
 				}
 
 			}
-			
+
 			.gallery-caption {
 				display: none;
 			}
-			
+
 			&:hover {
 				background: mix( @brand-primary, #fff, 85% );
-				
+
 				.gallery-caption {
 					display: table;
 					position: absolute;
@@ -51,7 +51,7 @@
 					height: ( @line-height-computed*5 );
 					pointer-events: none;
 					margin: (-@line-height-computed*2.5) 0 0 0;
-					
+
 					.inner {
 						display: table-cell;
 						vertical-align: middle;
@@ -61,27 +61,27 @@
 						text-align: center;
 					}
 				}
-				
+
 				img {
 					.img-grayscale;
 					opacity: .3;
 				}
-				
+
 			}
-			
+
 		}
-		
+
 	}
 
 
-	
+
 	/* =============================================================================
 	   Carousel gallery
 	   ========================================================================== */
 
 	&.gallery-style-carousel {
 	}
-	
+
 
 
 	/* =============================================================================
@@ -91,7 +91,7 @@
 	&.gallery-style-grid {
 		margin: @line-height-computed -5px;
 		.clearfix;
-		
+
 		ul {
 			list-style-type: none;
 			display: inline-block;
@@ -100,42 +100,42 @@
 			vertical-align: top;
 			padding: 0 5px;
 			margin: 0;
-			
+
 			&.col3 {
 				width: 33.33%
 			}
-			
+
 			&.col2 {
 				width: 50%;
 			}
-			
+
 			&.col1 {
 				width: 100%;
 			}
-			
+
 			li {
 				padding: 0;
 				margin: 10px 0;
 
 				.gallery-item {
-					
+
 					.gallery-icon {
-						
+
 						img {
 							width: 100%;
 							height: auto;
 						}
-	
+
 					}
-					
+
 					.gallery-caption {
 					}
-					
+
 				}
 			}
-			
+
 		}
-		
+
 	}
 
 }

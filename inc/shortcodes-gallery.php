@@ -17,14 +17,14 @@ function vc_gallery_shortcode( $output, $attr ) {
 			$attr['orderby'] = 'post__in';
 		$attr['include'] = $attr['ids'];
 	}
-	
+
 	// sanitize order attribute
 	if( isset($attr['orderby']) ) {
 		$attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
 		if( !$attr['orderby'] )
 			unset( $attr['orderby'] );
 	}
-	
+
 	// default attributes
 	extract(shortcode_atts(array(
 		'order'      => 'ASC',
@@ -52,7 +52,7 @@ function vc_gallery_shortcode( $output, $attr ) {
 	$id = intval($id);
 	if( strtolower($order) == 'rand' )
 		$orderby = 'none';
-	
+
 	// get attachments
 	if( !empty($include) ) {
 		$_attachments = get_posts(array(
@@ -88,7 +88,7 @@ function vc_gallery_shortcode( $output, $attr ) {
 		));
 	if( empty($attachments) )
 		return '';
-	
+
 	// if feed, show attachment links
 	if( is_feed() ) {
 		$output = "\n";
@@ -96,10 +96,10 @@ function vc_gallery_shortcode( $output, $attr ) {
 			$output .= wp_get_attachment_link($att_id, 'large', true) . "\n";
 		return $output;
 	}
-	
+
 	// with lightbox funcionality?
 	$lightbox = $lightbox==='true' ? true : false;
-	
+
 	// columns options
 	$columns = intval($columns);
 	$_columns['xs']['count'] = min(12,max(0, $columns_xs==='' ? ( $columns>1 ? floor($columns/2) : $columns ) : intval($columns_xs) ));
@@ -108,17 +108,17 @@ function vc_gallery_shortcode( $output, $attr ) {
 	$_columns['lg']['count'] = min(12,max(0, $columns_lg==='' ? $columns : intval($columns_lg) ));
 	foreach( $_columns as $ds => $col )
 		$_columns[$ds]['width'] = 12/$col['count'];
-	
+
 	// carousel options
 	$indicators = $indicators==='true' ? true : false;
 	$controls = $controls==='true' ? true : false;
 	$autostart = $autostart==='true' ? true : false;
 	$loop = $loop==='true' ? true : false;
 	$interval = intval($interval);
-		
+
 	// set numeric array index instead of IDs
 	$attachments = array_values($attachments);
-	
+
 	// gallery alpha
 	$output = '<div id="gallery-'.$instance.'" class="gallery'.
 		' galleryid-'.$id.
@@ -127,10 +127,10 @@ function vc_gallery_shortcode( $output, $attr ) {
 		( $link=='file' && $lightbox ? ' gallery-lightbox' : '' ).
 		( $class!=='' ? ' '.$class : '' ).
 		'">';
-	
+
 	// gallery styles
 	switch( $style ) {
-		
+
 		// boostrap carousel style
 		case 'carousel':
 			$output_indicators = '';
@@ -190,7 +190,7 @@ function vc_gallery_shortcode( $output, $attr ) {
 					$_img = wp_get_attachment_image_src( $id, $size );
 					$_img_link = wp_get_attachment_image_src( $id, 'full' );
 					$img = '<a href="'.$_img_link[0].'"'.
-						( $lightbox ? 
+						( $lightbox ?
 							' data-toggle="lightbox"'.
 							' data-gallery="g'.$instance.'"'.
 							' data-parent="#gallery-'.$instance.'"'.
@@ -238,7 +238,7 @@ function vc_gallery_shortcode( $output, $attr ) {
 					$_img = wp_get_attachment_image_src( $id, $size );
 					$_img_link = wp_get_attachment_image_src( $id, 'full' );
 					$img = '<a href="'.$_img_link[0].'"'.
-						( $lightbox ? 
+						( $lightbox ?
 							' data-toggle="lightbox"'.
 							' data-gallery="g'.$instance.'"'.
 							' data-parent="#gallery-'.$instance.'"'.
@@ -267,10 +267,10 @@ function vc_gallery_shortcode( $output, $attr ) {
 
 	// gallery omega
 	$output .= '</div>';
-	
+
 	// output gallery
 	return $output;
-	
+
 }
 
 // register gallery

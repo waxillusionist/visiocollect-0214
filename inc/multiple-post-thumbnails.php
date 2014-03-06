@@ -18,7 +18,7 @@ function get_mpt_src( $id, $size='', $post_obj=null ) {
 	$img_src = wp_get_attachment_image_src( $img_id, $size );
 	return is_array($img_src) ? $img_src : false;
 }
-	
+
 
 
 /* =============================================================================
@@ -36,7 +36,7 @@ if( !class_exists('MultiPostThumbnails')) {
 
 }
 else {
-	
+
 	/* =============================================================================
 	   Multiple post thumbnail definitions
 	   ========================================================================== */
@@ -50,8 +50,8 @@ else {
 		));
 	}
 	add_image_size('parallax', 1600, 0, false );
-	
-	
+
+
 }
 
 

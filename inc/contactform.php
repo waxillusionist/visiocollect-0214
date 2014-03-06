@@ -6,12 +6,12 @@
 
 function vc_contactform_handler() {
 	if( strtolower($_SERVER['REQUEST_METHOD'])=='post' && isset($_POST['cfd']) && $_POST['cfd']=='1' ) {
-	
+
 		// success
 		$cfs = false;
 		// errors
 		$cfe = array();
-		
+
 		// contact form data
 		$cfd = array(
 			'name'     => isset($_POST['cfd_name'])    ? trim($_POST['cfd_name'])    : '',
@@ -21,11 +21,11 @@ function vc_contactform_handler() {
 			'msg'      => isset($_POST['cfd_msg'])     ? trim($_POST['cfd_msg'])     : '',
 			'sendcopy' => isset($_POST['cfd_sendcopy']) && $_POST['cfd_sendcopy']=='1' ? true : false
 		);
-		
+
 		$str_filter = array( &$cfd['name'], &$cfd['phone'], &$cfd['subject'] );
 		foreach( $str_filter as $k => $v )
 			$str_filter[$k] = preg_replace( '/[\n\r,;]+/', '', $v );
-		
+
 		if( !empty($cfd['name']) && is_email($cfd['email']) && !empty($cfd['msg']) ) {
 			$site_name = get_bloginfo('name');
 			$site_url = get_home_url();
@@ -60,7 +60,7 @@ function vc_contactform_handler() {
 			if( empty($cfd['msg']) )
 				array_push( $cfe, array( 'msg', 'Bitte geben Sie eine Nachricht ein.' ) );
 		}
-	
+
 		$json = array(
 			'success' => $cfs,
 			'errors' => $cfe
@@ -75,13 +75,13 @@ add_action( 'wp', 'vc_contactform_handler' );
 /* =============================================================================
    SHORTCODE: Contact Form
    ========================================================================== */
-   
+
 function vc_shortcode_contactform( $atts, $content=null ) {
 	extract( shortcode_atts( array(
 		'subject' => '',
 		'class' => ''
 	), $atts ) );
-	
+
 	$html = '<form action="'.get_permalink().'" method="post" role="form" class="form-contact'.
 		( $class!=='' ? ' '.$class : '' ).
 		'">'.
