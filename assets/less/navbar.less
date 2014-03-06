@@ -1,0 +1,134 @@
+/* =============================================================================
+   Main Navbar
+   ========================================================================== */
+
+.main-navbar {
+	.navbar-inverse;
+	.font-gravur;
+	border: none;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	font-weight: 300;
+
+	& + div {
+		margin-top: ( @navbar-height + @navbar-margin-bottom );
+	}
+	
+	&.fixed-width {
+
+		& > div {
+			.container;
+		}
+	
+	}
+		
+	&.fluid {
+
+		& > div {
+			.container-fluid;
+		}
+
+	}
+	
+	&.fix-bottom {
+		.navbar-fixed-bottom;
+	}
+	
+	&.fix-none {
+		.navbar-static-top;
+		position: absolute;
+		top: auto;
+		width: 100%;
+
+	}
+	
+	&.fix-top {
+		.navbar-fixed-top;
+	
+ 	}
+
+	.navbar-header {
+		
+		h1 {
+			margin: 0;
+			font-weight: normal;
+		}
+		
+	}
+	
+	.navbar-brand {
+		background: transparent url('../img/vc-logo.png') left center no-repeat;
+		min-width:185px;
+	
+		@media (max-width: @screen-xs-max) {
+			margin-left: 5px;
+		}
+		
+		span {
+			.sr-only;
+		}
+
+	}
+
+	.navbar-nav {
+	
+		> li {
+		
+			@media (min-width: @screen-sm-min) {
+		
+				> a {
+					border-top: 2px transparent solid;
+					padding-bottom: ( @navbar-padding-vertical - 2 );
+				}
+			
+				&.active {
+					
+					> a {
+						border-top-color: @vc_blue;
+					}
+				}
+			
+			}
+			
+			&.active {
+				
+				> a {
+					color: #fff;
+				
+					&:hover,
+					&:focus {
+						color: @vc_blue;
+					}
+				
+				}
+			}
+			
+			&.dropdown {
+				
+				&.open {
+				
+					> a {
+						border-top-color: @vc_gray;
+						background: transparent;
+					}
+				}
+				
+			}
+		
+			.dropdown-menu {
+
+				> li {
+
+					> a {
+						font-weight: 300;
+					}
+				
+				}
+
+			}
+		
+		}
+		
+	}
+	
+}

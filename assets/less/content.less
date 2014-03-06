@@ -1,0 +1,206 @@
+/* =============================================================================
+   Post Content
+   ========================================================================== */
+
+.entry-content {
+	.clearfix;
+}
+
+
+
+/* =============================================================================
+   External Links
+   ========================================================================== */
+
+a.external {
+}
+
+
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+
+p.lead {
+	font-weight: 300;
+	
+	@media (max-width: @screen-xs-max) {
+		margin-bottom: ( @line-height-computed * 2 );
+	}
+
+	@media (min-width: @screen-sm-min) {
+		margin-bottom: ( @line-height-computed * 3 );
+	}
+}
+
+kbd {
+	.kbd-key;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
+
+
+
+/* =============================================================================
+   Embedded Content
+   ========================================================================== */
+
+embed,
+iframe,
+video,
+audio {
+	max-width: 100%;
+}
+
+
+
+/* =============================================================================
+   Alignments
+   ========================================================================== */
+
+.alignnone,
+.alignleft,
+.alignright,
+.aligncenter {
+	margin: 0 0 (@line-height-computed / 2) 0;
+}
+
+.alignnone {
+}
+
+.aligncenter {
+	.center-block;
+}
+
+.alignright {
+	float:right;
+	margin-left: @padding-large-horizontal;
+}
+
+.alignleft {
+	float: left;
+	margin-right: @padding-large-horizontal;
+}
+
+
+
+/* =============================================================================
+   Captions
+   ========================================================================== */
+
+.wp-caption {
+	max-width: 100% !important;
+
+	img {
+
+	}
+	
+	.wp-caption-text {
+		.small;
+		color: @gray;
+	}
+
+}
+
+
+
+/* =============================================================================
+   Tweets
+   ========================================================================== */
+
+.twitter-tweet {
+	.center-block;
+	margin-bottom: @padding-large-vertical;
+}
+
+
+
+/* =============================================================================
+   Row / Column spacing
+   ========================================================================== */
+
+.row > * > *:nth-child(1) {
+	margin-top: 0;
+	
+	&:before {
+		margin-top: 0;
+	}
+	
+}
+
+
+
+/* =============================================================================
+   Carousel
+   ========================================================================== */
+
+.carousel {
+
+	p {
+		margin: 0;
+	}
+	
+	.carousel-inner {
+		
+		.item {
+			
+			img {
+				width: 100%;
+				height: auto;
+			}
+			
+		}
+		
+	}
+
+}
+
+
+
+/* =============================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+	.font-gravur;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	font-weight: 300;
+	padding: (@padding-base-vertical + 2) @padding-base-horizontal (@padding-base-vertical - 2) @padding-base-horizontal;
+	
+	&.wide {	
+		width: 200px;
+	}
+
+	
+}
+
+.btn-lg {
+	padding: (@padding-large-vertical + 2) @padding-large-horizontal (@padding-large-vertical - 2) @padding-large-horizontal;
+}
+
+.btn-sm {
+	padding: (@padding-small-vertical + 2) @padding-small-horizontal (@padding-small-vertical - 2) @padding-small-horizontal;
+}
+
+.btn-xs {
+	padding: (@padding-xs-vertical + 2) @padding-xs-horizontal (@padding-xs-vertical - 2) @padding-xs-horizontal;
+}
+
+
+
+/* =============================================================================
+   Spacers
+   ========================================================================== */
+
+.spacer {
+	margin: 0 0 @line-height-computed 0;
+}
+
+

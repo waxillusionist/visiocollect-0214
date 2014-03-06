@@ -1,0 +1,30 @@
+/* =============================================================================
+   Fonts
+   ========================================================================== */
+
+.font-face( @family, @file, @weight: 400, @style: normal ) {
+	@font-face {
+		font-family: @family;
+		font-weight: @weight;
+		font-style: @style;
+		src: url('../fonts/@{file}.eot');
+		src: url('../fonts/@{file}.eot?#iefix') format('embedded-opentype'),
+		     url('../fonts/@{file}.woff') format('woff'),
+		     url('../fonts/@{file}.ttf') format('truetype'),
+			 url('../fonts/@{file}.svg#@{file}') format('svg');
+	}
+}
+
+.font-face( 'Gravur', 'gravuconthi', 200 );
+.font-face( 'Gravur', 'gravuconlig', 300 );
+.font-face( 'Gravur', 'gravuconreg', 400 );
+.font-face( 'Gravur', 'gravuconbol', 700 );
+.font-face( 'Gravur', 'gravuconbla', 900 );
+
+.font-gravur() {
+	font-family: Gravur, @font-family-sans-serif;
+}
+
+.font-lato() {
+	font-family: Lato, @font-family-sans-serif;
+}

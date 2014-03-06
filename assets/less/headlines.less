@@ -1,0 +1,126 @@
+/* =============================================================================
+   Headlines
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+	.font-gravur;
+	font-weight: 400;
+	color: @vc_gray;
+}
+
+.entry-title {
+
+	@media (max-width: @screen-xs-max) {
+		padding: 60px 0 0 0;
+		margin: -20px 0 40px 0;
+		font-size: 56px;	
+	}
+
+	@media (min-width: @screen-sm-min) {
+		padding: 90px 0 0 0;
+		margin: -30px 0 60px 0;
+		font-size: 72px;
+	}
+
+}
+
+.entry-content {
+
+	h1, h2, h3, h4 {
+
+		@media (max-width: @screen-xs-max) {
+			margin-top: ( @line-height-computed * 2 );
+		}
+	
+		@media (min-width: @screen-sm-min) {
+			margin-top: ( @line-height-computed * 3 );
+		}
+
+	}
+	
+}
+
+
+
+/* =============================================================================
+   Dotted top-borders for headlines and containers
+   ========================================================================== */
+
+.dotted() {
+	border-top: 1px dotted #444;
+	padding-top: @line-height-computed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	&.dotted {
+		.dotted;
+	}
+}
+
+.col.dotted > *:nth-child(1) {
+	.dotted;
+}
+
+h3 {
+	.dotted;
+	text-transform: uppercase;
+}
+
+
+
+
+/* =============================================================================
+   Boxed headlines
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+	
+	&.boxed {
+		display: inline;
+		margin: 0;
+		padding: .75em .8em .55em .8em;
+		background: @vc_black;
+		border-top: none;
+		color: #fff;
+		font-weight: 300;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		
+		&:before {
+			content: '';
+			display:block;
+			width: 100%;
+			height: 0;
+			float: left;
+			
+			@media (max-width: @screen-xs-max) {
+				margin-top: ( @line-height-computed * 2 );
+			}
+		
+			@media (min-width: @screen-sm-min) {
+				margin-top: ( @line-height-computed * 3 );
+			}
+	
+		}
+		
+		&:after {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 0;
+			float: left;
+			margin: .35em 0 30px 0;
+			border-top: 1px dotted @vc_black;
+		}
+		
+		+ * {
+			clear: left;
+		}
+
+	}
+	
+}
+
+h3.boxed {
+	font-size: 14px;
+}

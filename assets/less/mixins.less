@@ -1,0 +1,135 @@
+/* =============================================================================
+   Disable / enable text size
+   ========================================================================== */
+
+.text-zero() {
+	font: ~'0/0' a;
+}
+
+.text-base() {
+	font: ~'@{font-size-base}/@{line-height-base}' @font-family-base;
+}
+
+
+.transition-timing-function( @transition-timing-function ) {
+	-webkit-transition-duration: @transition-timing-function;
+	        transition-duration: @transition-timing-function;
+}
+
+
+
+/* =============================================================================
+   Grayscale images
+   ========================================================================== */
+
+.img-grayscale() {
+	filter: url('../img/grayscale.svg#on');
+	-webkit-filter: grayscale(1);
+}
+
+.img-grayscale-off() {
+	filter: url('../img/grayscale.svg#off');
+	-webkit-filter: grayscale(0);
+}
+
+
+
+/* =============================================================================
+   Multi-level ordered list with hierarchical index
+   ========================================================================== */
+
+ol.chapter-index {
+	counter-reset: item;
+
+	li {
+		&:before {
+			content: counters(item, ".") ".";
+			counter-increment: item;
+		}
+	}
+
+	ol {
+		li {
+			&:before {
+				content: counters(item, ".") " ";
+			}
+		}
+	}
+}
+
+
+
+/* =============================================================================
+   Pulsing images
+   ========================================================================== */
+
+.pulse {
+	.animation-name(pulse);
+	.animation-duration(1.5s);
+	.animation-iteration-count(infinite);
+	.animation-timing-function(ease-in-out);
+}
+
+.pulse-frames() {
+	0% {
+		.scale( .9, .9 );
+		opacity: .6;
+	}
+	50% {
+		.scale( 1, 1 );
+		opacity: .9;
+	}
+	100% {
+		.scale( .9, .9 );
+		opacity: .6;
+	}
+}
+
+@-webkit-keyframes pulse { .pulse-frames; }
+   @-moz-keyframes pulse { .pulse-frames; }
+    @-ms-keyframes pulse { .pulse-frames; }
+     @-o-keyframes pulse { .pulse-frames; }
+        @keyframes pulse { .pulse-frames; }
+
+
+
+/* =============================================================================
+   "Realistic key look" for KBD tags
+   ========================================================================== */
+
+.kbd-key() {
+	display: inline;
+	display: inline-block;
+	margin: 0 .2em;
+	min-width: 1em;
+	padding: .35em .35em;
+	font-weight: normal;
+	font-family:  "Lucida Grande", Lucida, Arial, sans-serif;
+	font-size: .85em;
+	text-transform: uppercase;
+	line-height: 1em;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	cursor: default;
+	color:  rgb(50, 50, 50);
+	text-shadow: 0 0 2px rgb(255, 255, 255);
+	border-radius: .3em;
+	box-shadow:
+		0 0 1px rgb(255, 255, 255) inset,
+		0 0 .4em rgb(200, 200, 200) inset,
+		0 .1em 0 rgb(130, 130, 130),
+		0 .11em 0 rgba(0, 0, 0, .4),
+		0 .1em .11em rgba(0, 0, 0, .9);
+	.user-select( none );
+	#gradient > .vertical(
+		rgb(210, 210, 210),
+		rgb(255, 255, 255)
+	);
+
+	&[title] {
+		cursor: help;
+	}
+
+}
+
