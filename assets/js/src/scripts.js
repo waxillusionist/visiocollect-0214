@@ -6,11 +6,14 @@
 	'use strict';
 
 
+
 	/* =============================================================================
 	   on DOM ready
 	   ========================================================================== */
 
 	$(document).ready(function(){
+
+
 
 		/* =============================================================================
 		   Main-NavBar Fixation
@@ -56,6 +59,8 @@
 			});
 		});
 
+
+
 		/* =============================================================================
 		   Grid Gallery
 		   ========================================================================== */
@@ -83,6 +88,8 @@
 						cols[shortest_col][1] += parseInt( $(this).find('.gallery-icon img').attr('height') );
 						cols[shortest_col][0].append( $('<li/>').append( $(this) ) );
 					});
+					if( skr )
+						skr.refresh(gallery);
 				}
 			}).trigger('resize.gridGallery');
 		});
@@ -110,7 +117,7 @@
 			'resize.heightfix': function(ev){
 				var els = $('[data-heightfix^="rel"]'),
 					groups = {},
-					xsDisplay = $(window).width<768 ? true : false;
+					xsDisplay = $(window).width()<768 ? true : false;
 				els.each(function(){
 					var el = $(this).css('min-height','auto'),
 						elh = el.height(),
@@ -184,26 +191,88 @@
 
 
 		/* =============================================================================
+		   Parallax preparation for Skrollr
+		   ========================================================================== */
+
+		$(window).on({
+			'resize.parallax': function() {
+				var els = $('.parallax');
+				els.each(function(){
+					var h = $(this).height(),
+						m = $(this).data('parallax-multiplier') ? parseFloat($(this).data('parallax-multiplier')) : 0.5;
+					$(this).attr({
+						'data-bottom-top': 'background-position: 50% '+(h*m)+'px',
+						'data-top-bottom': 'background-position: 50% -'+(h*m)+'px'
+					});
+				});
+				if( skr )
+					skr.refresh(els);
+			}
+		}).trigger('resize.parallax');
+
+
+
+		/* =============================================================================
+		   ScrollScale preparation for Skrollr
+		   ========================================================================== */
+
+		if( $(window).width()>=768 ) {
+			$('.scrollscale').each(function(){
+				var a = 0.75,
+					b = 1.25;
+				$(this).attr({
+					'data-bottom-top':
+						'-webkit-transform: scale('+a+', '+a+');'+
+						    '-ms-transform: scale('+a+', '+a+');'+
+						        'transform: scale('+a+', '+a+');',
+					'data-top-bottom':
+						'-webkit-transform: scale('+b+', '+b+');'+
+						    '-ms-transform: scale('+b+', '+b+');'+
+						        'transform: scale('+b+', '+b+');'
+				});
+			});
+		}
+
+
+
+		/* =============================================================================
+		   Skrollr
+		   ========================================================================== */
+
+		var skr = skrollr.init({
+			smoothScrolling: false,
+			forceHeight: false
+		});
+
+
+
+		/* =============================================================================
 		   MixItUp Spektrum
 		   ========================================================================== */
 
 		$('.mixitup').each(function(){
-			$(this).mixItUp({
-				controls: {
-					live: false
+			var mixitup = $(this);
+			mixitup.find('.mix').each(function(){
+				var img_url = $(this).find('.img img').attr('src');
+				$(this).find('figure').append([
+					$('<div class="curtain-top" style="background-image:url(\''+img_url+'\')">')[0],
+					$('<div class="curtain-bottom" style="background-image:url(\''+img_url+'\')">')[0]
+				]);
+			});
+			mixitup.mixItUp({
+				animation: {
+					enable: true
+				},
+				callbacks: {
+					onMixEnd: function() {
+						skr.refresh(mixitup);
+					}
 				}
 			});
 			$('.mixitup-controls').find('a').on({
 				click: function(ev) {
 					ev.preventDefault();
 				}
-			});
-			$(this).find('.mix').each(function(){
-				var img_url = $(this).find('.img img').attr('src');
-				$(this).find('figure').append([
-					$('<div class="curtain-top" style="background-image:url(\''+img_url+'\')">')[0],
-					$('<div class="curtain-bottom" style="background-image:url(\''+img_url+'\')">')[0]
-				]);
 			});
 		});
 
@@ -278,35 +347,6 @@
 				}
 			});
 		});
-
-
-
-		/* =============================================================================
-		   Skrollr
-		   ========================================================================== */
-
-		var skrollr = skrollr.init();
-
-
-
-		/* =============================================================================
-		   Parallax effects
-		   ========================================================================== */
-
-		// $('.parallax').each(function(){
-		// 	var el     = $(this),
-		// 		xpos   = el.data('xpos') ? el.data('xpos') : '50%',
-		// 		speed  = el.data('speed') ? parseFloat(el.data('speed')) : 0.1,
-		// 		img    = el.data('img') ? el.data('img') : false,
-		// 		height = el.data('height') ? el.data('height') : '450px' ;
-		// 	if ( img ) {
-		// 		el.css({
-		// 			'background-image': 'url(\''+img+'\')',
-		// 			'min-height': height
-		// 		});
-		// 	}
-		// 	el.parallax(xpos,speed);
-		// });
 
 
 

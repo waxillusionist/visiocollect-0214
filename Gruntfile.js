@@ -43,7 +43,15 @@ module.exports = function(grunt) {
 				expand: true,
 				src: 'bower_components/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php',
 				dest: 'inc/vendor/',
-				flatten: true,
+				flatten: true
+			},
+
+			// skrollr IE<9 extensions
+			skrollrIE: {
+				expand: true,
+				src: 'bower_components/skrollr-ie/dist/skrollr.ie.min.js',
+				dest: 'assets/js/vendor/',
+				flatten: true
 			}
 
 		},
@@ -132,7 +140,7 @@ module.exports = function(grunt) {
 						'bower_components/bootstrap/js/tab.js',
 						'bower_components/bootstrap/js/affix.js',
 						'bower_components/ekko-lightbox/dist/ekko-lightbox.js',
-						'bower_components/jQuery-Parallax/scripts/jquery.parallax-1.1.3.js',
+						'bower_components/skrollr/src/skrollr.js',
 						'bower_components/mixitup/src/jquery.mixitup.js',
 						'bower_components/gmap3/gmap3.js',
 						'assets/js/src/scripts.js'
@@ -157,7 +165,7 @@ module.exports = function(grunt) {
 					sourceMap: true,
 					outputSourceFiles: true,
 					report: 'min',
-					compress: false,
+					compress: true,
 					sourceMapURL: 'styles.min.css.map',
 					sourceMapFilename: 'assets/css/styles.min.css.map'
 				},
@@ -297,9 +305,6 @@ module.exports = function(grunt) {
 	   Custom Tasks
 	   ========================================================================== */
 
-	grunt.registerTask( 'copy-dep', [
-		'copy'
-	]);
 	grunt.registerTask( 'build-theme', [
 		'concat:theme'
 	]);
@@ -311,7 +316,7 @@ module.exports = function(grunt) {
 		'uglify'
 	]);
 	grunt.registerTask( 'build-all', [
-		'copy-dep',
+		'copy',
 		'build-theme',
 		'build-css',
 		'build-js',

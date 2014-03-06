@@ -18,7 +18,7 @@ $parallax_img = get_mpt_src('parallax');
 
 ?>
 <div class="loading-wrapper">
-	<div data-ops="<?php echo esc_attr(get_permalink()); ?>" class="bg-image parallax fullscreen" data-speed=".3" style="background-image:url('<?php echo $parallax_img[0]; ?>');">
+	<div data-ops="<?php echo esc_attr(get_permalink()); ?>" class="bg-image parallax fullscreen" style="background-image:url('<?php echo $parallax_img[0]; ?>');">
 		<div class="inner">
 			<div class="container">
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -50,7 +50,7 @@ if( $childposts->have_posts() ) {
 
 		if( $parallax_img ) {
 			?>
-			<div class="bg-image parallax" data-speed=".2" style="background-image:url('<?php echo $parallax_img[0]; ?>');"></div>
+			<div class="bg-image parallax" style="background-image:url('<?php echo $parallax_img[0]; ?>');"></div>
 			<?php
 		}
 		?>

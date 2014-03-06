@@ -16,8 +16,7 @@ function vc_shortcode_bgimage( $atts, $content=null ) {
 		'attachment' => '',
 		'repeat' => '',
 		'parallax' => false,
-		'xpos' => '50%',
-		'speed' => '.1',
+		'multiplier' => '.5',
 		'class' => ''
 	), $atts ) );
 	$parallax = $parallax==='true';
@@ -54,8 +53,7 @@ function vc_shortcode_bgimage( $atts, $content=null ) {
 		( $repeat!=='' ? 'background-repeat:'.$repeat.';' : '' ).
 		'"'.
 		( $parallax ?
-			' data-xpos="'.$xpos.'"'.
-			( $speed!=='' ? ' data-speed="'.$speed.'"' : '' )
+			( $multiplier!=='' ? ' data-parallax-multiplier="'.$multiplier.'"' : '' )
 		:'').
 		$html_omega;
 	return $html;
