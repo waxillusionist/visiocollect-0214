@@ -216,6 +216,15 @@ module.exports = function(grunt) {
 		   ========================================================================== */
 
 		watch: {
+			php: {
+				files: [
+					'*.php',
+					'inc/*.php'
+				],
+		        options: {
+					livereload: true
+				}
+			},
 			js: {
 				files: [
 					'assets/js/src/*.js'
@@ -224,7 +233,10 @@ module.exports = function(grunt) {
 					'build-js',
 					'version',
 					'notify:js'
-				]
+				],
+		        options: {
+					livereload: true
+				}
 			},
 			less: {
 				files: [
@@ -234,7 +246,10 @@ module.exports = function(grunt) {
 					'build-css',
 					'version',
 					'notify:css'
-				]
+				],
+		        options: {
+					livereload: true
+				}
 			}
 		},
 
