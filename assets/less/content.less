@@ -197,7 +197,7 @@ audio {
 	padding: (@padding-base-vertical + 2) @padding-base-horizontal (@padding-base-vertical - 2) @padding-base-horizontal;
 	border-color: @vc_blue;
 	.transition-duration(.4s);
-	.transition-transform(transform);
+	.transition-property(~'background-color,color');
 
 	&.wide {
 		width: 200px;
