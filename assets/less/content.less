@@ -6,7 +6,21 @@
 	.clearfix;
 }
 
+.entry-image {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: transparent;
+	background-size: cover;
 
+	@media (max-width: @screen-xs-max) {
+		height: 240px;
+	}
+
+	@media (min-width: @screen-sm-min) {
+		height: 400px;
+	}
+
+}
 
 /* =============================================================================
    Links

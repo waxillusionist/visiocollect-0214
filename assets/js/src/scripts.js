@@ -260,12 +260,10 @@
 				]);
 			});
 			mixitup.mixItUp({
-				animation: {
-					enable: true
-				},
 				callbacks: {
 					onMixEnd: function() {
-						skr.refresh(mixitup);
+						if( skr )
+							skr.refresh(mixitup);
 					}
 				}
 			});

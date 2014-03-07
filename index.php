@@ -12,29 +12,18 @@ if( have_posts() ) {
 
 	?>
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-8">
-				<?php
+		<?php
 
-				while(have_posts()) {
+		while(have_posts()) {
 
-					the_post();
-					get_template_part( 'loop', 'post' );
+			the_post();
+			get_template_part( 'loop', 'index' );
 
-				}
+		}
 
-				vc_content_nav();
+		vc_content_nav();
 
-				?>
-			</div>
-			<div class="col-sm-3 col-sm-offset-1">
-				<?php
-
-				get_sidebar();
-
-				?>
-			</div>
-		</div>
+		?>
 	</div>
 	<?php
 
