@@ -26,6 +26,16 @@
 
 
 		/* =============================================================================
+		   Open external links in new window
+		   ========================================================================== */
+
+		$('a[href^="http://"],a[href^="//"]').not('[href*="'+window.location.hostname+'"]').each(function(){
+			$(this).addClass('external').attr('target','_blank');
+		});
+
+
+
+		/* =============================================================================
 		   Main-NavBar Fixation
 		   ========================================================================== */
 
@@ -262,6 +272,7 @@
 
 		$('.mixitup').each(function(){
 			var mixitup = $(this);
+			// if( !Modernizr.touch ) {
 			mixitup.find('.mix').each(function(){
 				var img_url = $(this).find('.img img').attr('src');
 				$(this).find('figure').append([
@@ -269,6 +280,7 @@
 					$('<div class="curtain-bottom" style="background-image:url(\''+img_url+'\')">')[0]
 				]);
 			});
+			// }
 			mixitup.mixItUp({
 				callbacks: {
 					onMixEnd: function() {
