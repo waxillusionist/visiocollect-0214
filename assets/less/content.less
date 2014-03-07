@@ -195,9 +195,18 @@ audio {
 	text-transform: uppercase;
 	font-weight: 300;
 	padding: (@padding-base-vertical + 2) @padding-base-horizontal (@padding-base-vertical - 2) @padding-base-horizontal;
+	border-color: @vc_blue;
 
 	&.wide {
 		width: 200px;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: transparent;
+		color: @vc_blue;
+		border-color: @vc_blue;
 	}
 
 
