@@ -71,11 +71,7 @@ add_action( 'wp_head', 'vc_fix_ltie9' );
    ========================================================================== */
 
 function vc_scripts_n_styles() {
-	wp_register_style( 'vc-google-fonts', 'http://fonts.googleapis.com/css?family='.
-		'Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic',
-		array(), THEME_VERSION, 'all' );
-	$style_dependencies = array('vc-google-fonts');
-	wp_enqueue_style('vc-styles', THEME_URI.'assets/css/styles.min.css', $style_dependencies, '7605');
+	wp_enqueue_style('vc-styles', THEME_URI.'assets/css/styles.min.css', array(), 'c39c');
 	wp_register_script('modernizr', THEME_URI.'assets/js/vendor/modernizr.min.js', array(), null, true);
 	wp_register_script('gmaps-api', 'https://maps.google.com/maps/api/js?sensor=false', array(), null, true);
 	$script_dependencies = array('modernizr','jquery','gmaps-api');
