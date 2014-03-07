@@ -7,11 +7,16 @@
 function vc_content_nav() {
 	global $wp_query;
 	if( $wp_query->max_num_pages > 1 ) {
-		echo '<div class="wp-navigation" role="navigation"><div class="wp-nav-next">';
-		previous_posts_link( __( 'Next Page', THEME_TEXTDOMAIN ) );
-		echo '</div><div class="wp-nav-previous">';
-		next_posts_link( __( 'Previous page', THEME_TEXTDOMAIN ) );
-		echo '</div></div>';
+		$prev_link = get_previous_posts_link();
+		$next_link = get_next_posts_link();
+		$prev_url = $prev_link ? explode('"',$prev_link)[1] : false;
+		$next_url = $next_link ? explode('"',$next_link)[1] : false;
+		$prev_tag = $prev_url ? 'a' : 'span';
+		$next_tag = $next_url ? 'a' : 'span';
+		echo '<div class="pagination-links" role="navigation">'.
+			'<'.$next_tag.( $next_url ? ' href="'.$next_url.'"' : '' ).' class="pagination-link next" title="&Auml;ltere Beitr&auml;ge"><span class="glyphicon glyphicon-chevron-left"></span></'.$next_tag.'> '.
+			'<'.$prev_tag.( $prev_url ? ' href="'.$prev_url.'"' : '' ).' class="pagination-link prev" title="Neuere Beitr&auml;ge"><span class="glyphicon glyphicon-chevron-right"></span></'.$prev_tag.'>'.
+			'</div>';
 	}
 }
 

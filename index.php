@@ -27,6 +27,7 @@ if( have_posts() ) {
 	</div>
 	<?php
 
+	get_template_part( 'snippet', 'footer' );
 	get_footer();
 
 }
