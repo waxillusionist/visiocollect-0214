@@ -5,6 +5,16 @@
 (function($){
 	'use strict';
 
+	/* =============================================================================
+	   Global vars
+	   ========================================================================== */
+
+	$.skrollr = null;
+
+	$(window).load(function(){
+		if( $.skrollr )
+			$.skrollr.refresh();
+	});
 
 
 	/* =============================================================================
@@ -88,8 +98,8 @@
 						cols[shortest_col][1] += parseInt( $(this).find('.gallery-icon img').attr('height') );
 						cols[shortest_col][0].append( $('<li/>').append( $(this) ) );
 					});
-					if( skr )
-						skr.refresh(gallery);
+					if( $.skrollr )
+						$.skrollr.refresh();
 				}
 			}).trigger('resize.gridGallery');
 		});
@@ -205,8 +215,8 @@
 						'data-top-bottom': 'background-position: 50% -'+(h*m)+'px'
 					});
 				});
-				if( skr )
-					skr.refresh(els);
+				if( $.skrollr )
+					$.skrollr.refresh();
 			}
 		}).trigger('resize.parallax');
 
@@ -239,7 +249,7 @@
 		   Skrollr
 		   ========================================================================== */
 
-		var skr = skrollr.init({
+		$.skrollr = skrollr.init({
 			smoothScrolling: false,
 			forceHeight: false
 		});
@@ -262,8 +272,8 @@
 			mixitup.mixItUp({
 				callbacks: {
 					onMixEnd: function() {
-						if( skr )
-							skr.refresh(mixitup);
+						if( $.skrollr )
+							$.skrollr.refresh();
 					}
 				}
 			});
