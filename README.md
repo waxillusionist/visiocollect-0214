@@ -5,7 +5,7 @@ Visiocollect 02/14 Wordpress Theme
 
 Stelle sicher, dass [Node](http://nodejs.org/), [Grunt](http://gruntjs.com/) und [Bower](http://bower.io/) auf deinem System installiert sind.
 
-Erstelle einen lokalen Klon des Repositories oder lade die ZIP herunter und entpacke sie.
+Erstelle einen [lokalen Klon](github-mac://openRepo/https://github.com/simbo/visiocollect-0214) des Repositories oder lade die [ZIP-Datei](https://github.com/simbo/visiocollect-0214/archive/master.zip) herunter und entpacke sie.
 
 Gib im Stammverzeichnis des Projekts folgende Befehle ein, um alle Abhängigkeiten herunterzuladen:
 
