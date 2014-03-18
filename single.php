@@ -10,12 +10,12 @@ get_template_part( 'snippet', 'topbar' );
 
 ?>
 <div class="container">
-	<?php
+    <?php
 
-	the_post();
-	get_template_part( 'loop', 'post' );
+    the_post();
+    get_template_part( 'loop', 'post' );
 
-	?>
+    ?>
 </div>
 <?php
 

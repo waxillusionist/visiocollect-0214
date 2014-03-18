@@ -10,11 +10,11 @@ $thumb_html = $thumb ? '<div class="entry-image" style="background-image:url('.$
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-single'); ?>>
-	<?php echo $thumb_html; ?>
-	<header class="entry-header">
-		<h2 class="entry-title"><?php the_title(); ?></a></h2>
-	</header>
-	<div class="entry-content">
-		<?php the_content(); ?>
-	</div>
+    <?php echo $thumb_html; ?>
+    <header class="entry-header">
+        <h2 class="entry-title"><?php the_title(); ?></a></h2>
+    </header>
+    <div class="entry-content">
+        <?php the_content(); ?>
+    </div>
 </article>

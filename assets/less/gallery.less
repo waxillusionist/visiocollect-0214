@@ -3,139 +3,139 @@
    ========================================================================== */
 
 .gallery {
-	margin: @line-height-computed 0;
+    margin: @line-height-computed 0;
 
 
 
-	/* =============================================================================
-	   Classic (rows and columns)
-	   ========================================================================== */
+    /* =============================================================================
+       Classic (rows and columns)
+       ========================================================================== */
 
-	&.gallery-style-classic {
+    &.gallery-style-classic {
 
-		.row {
-			margin: 0 -5px !important;
-		}
+        .row {
+            margin: 0 -5px !important;
+        }
 
-		.col {
-			padding: 5px !important;
-		}
+        .col {
+            padding: 5px !important;
+        }
 
-		.gallery-item {
-			margin: 0 !important;
-			position: relative;
-			overflow: hidden;
+        .gallery-item {
+            margin: 0 !important;
+            position: relative;
+            overflow: hidden;
 
-			.gallery-icon {
+            .gallery-icon {
 
-				img {
-					width: 100%;
-					height: auto;
-				}
+                img {
+                    width: 100%;
+                    height: auto;
+                }
 
-			}
+            }
 
-			.gallery-caption {
-				display: none;
-			}
+            .gallery-caption {
+                display: none;
+            }
 
-			&:hover {
-				background: mix( @brand-primary, #fff, 85% );
+            &:hover {
+                background: mix( @brand-primary, #fff, 85% );
 
-				.gallery-caption {
-					display: table;
-					position: absolute;
-					top: 50%;
-					left: 0;
-					width: 100%;
-					height: ( @line-height-computed*5 );
-					pointer-events: none;
-					margin: (-@line-height-computed*2.5) 0 0 0;
+                .gallery-caption {
+                    display: table;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: 100%;
+                    height: ( @line-height-computed*5 );
+                    pointer-events: none;
+                    margin: (-@line-height-computed*2.5) 0 0 0;
 
-					.inner {
-						display: table-cell;
-						vertical-align: middle;
-						padding: 0 15px;
-						color: #fff;
-						text-shadow: 1px 1px 2px #000;
-						text-align: center;
-					}
-				}
+                    .inner {
+                        display: table-cell;
+                        vertical-align: middle;
+                        padding: 0 15px;
+                        color: #fff;
+                        text-shadow: 1px 1px 2px #000;
+                        text-align: center;
+                    }
+                }
 
-				img {
-					.img-grayscale;
-					opacity: .3;
-				}
+                img {
+                    .img-grayscale;
+                    opacity: .3;
+                }
 
-			}
+            }
 
-		}
+        }
 
-	}
-
-
-
-	/* =============================================================================
-	   Carousel gallery
-	   ========================================================================== */
-
-	&.gallery-style-carousel {
-	}
+    }
 
 
 
-	/* =============================================================================
-	   Grid gallery
-	   ========================================================================== */
+    /* =============================================================================
+       Carousel gallery
+       ========================================================================== */
 
-	&.gallery-style-grid {
-		margin: @line-height-computed -5px;
-		.clearfix;
+    &.gallery-style-carousel {
+    }
 
-		ul {
-			list-style-type: none;
-			display: inline-block;
-			text-align: center;
-			white-space: nowrap;
-			vertical-align: top;
-			padding: 0 5px;
-			margin: 0;
 
-			&.col3 {
-				width: 33.33%
-			}
 
-			&.col2 {
-				width: 50%;
-			}
+    /* =============================================================================
+       Grid gallery
+       ========================================================================== */
 
-			&.col1 {
-				width: 100%;
-			}
+    &.gallery-style-grid {
+        margin: @line-height-computed -5px;
+        .clearfix;
 
-			li {
-				padding: 0;
-				margin: 10px 0;
+        ul {
+            list-style-type: none;
+            display: inline-block;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: top;
+            padding: 0 5px;
+            margin: 0;
 
-				.gallery-item {
+            &.col3 {
+                width: 33.33%
+            }
 
-					.gallery-icon {
+            &.col2 {
+                width: 50%;
+            }
 
-						img {
-							width: 100%;
-							height: auto;
-						}
+            &.col1 {
+                width: 100%;
+            }
 
-					}
+            li {
+                padding: 0;
+                margin: 10px 0;
 
-					.gallery-caption {
-					}
+                .gallery-item {
 
-				}
-			}
+                    .gallery-icon {
 
-		}
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
 
-	}
+                    }
+
+                    .gallery-caption {
+                    }
+
+                }
+            }
+
+        }
+
+    }
 
 }

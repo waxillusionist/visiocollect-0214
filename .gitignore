@@ -1,17 +1,19 @@
 # Project related
-bower_components/
-node_modules/
-sftp-config.json
 assets/css/*
-assets/fonts/*
+assets/fonts/vendor/*
 assets/js/*
 !assets/js/**/
 assets/js/vendor/*
-!assets/js/vendor/modernizr.min.js
+!assets/js/vendor/modernizr
 inc/vendor/*
+
+# Components
+bower_components/
+node_modules/
 !.gitignore
 
 # IDE
+sftp-config.json
 *.sublime-workspace
 *.sublime-project
 *.esproj

@@ -3,9 +3,9 @@
    ========================================================================== */
 
 html, body {
-	min-height: 100%;
-	height: 100%;
-	font-weight: 300;
+    min-height: 100%;
+    height: 100%;
+    font-weight: 300;
 }
 
 
@@ -15,12 +15,12 @@ html, body {
    ========================================================================== */
 
 .gmap {
-	margin: 0 0 (@line-height-computed / 2) 0;
+    margin: 0 0 (@line-height-computed / 2) 0;
 
-	img {
-		display: inline;
-		max-width: none;
-	}
+    img {
+        display: inline;
+        max-width: none;
+    }
 
 }
 
@@ -31,14 +31,14 @@ html, body {
    ========================================================================== */
 
 .full-width {
-	position: absolute;
-	top: auto;
-	left: 0;
-	width: 100% !important;
+    position: absolute;
+    top: auto;
+    left: 0;
+    width: 100% !important;
 
-	.inner {
-		.container;
-	}
+    .inner {
+        .container;
+    }
 
 }
 
@@ -49,25 +49,25 @@ html, body {
    ========================================================================== */
 
 .fullscreen {
-	display: table;
-	width: 100% !important;
-	height: 100% !important;
-	min-height: 100%;
+    display: table;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100%;
 
-	.inner {
-		display: table-cell;
-		text-align: center;
-		padding-bottom: @navbar-height;
+    .inner {
+        display: table-cell;
+        text-align: center;
+        padding-bottom: @navbar-height;
 
-		@media (min-width: @screen-sm-min) {
-			vertical-align: middle;
-		}
+        @media (min-width: @screen-sm-min) {
+            vertical-align: middle;
+        }
 
-		article {
-			padding: 40px 0;
-		}
+        article {
+            padding: 40px 0;
+        }
 
-	}
+    }
 
 }
 
@@ -78,8 +78,8 @@ html, body {
    ========================================================================== */
 
 .loading-wrapper {
-	background: #000 url('../img/logo-animation-white.gif') center center no-repeat;
-	height: 100%;
+    background: #000 url('../img/logo-animation-white.gif') center center no-repeat;
+    height: 100%;
 }
 
 
@@ -89,41 +89,41 @@ html, body {
    ========================================================================== */
 
 .bg-image {
-	position: relative;
-	background-color: transparent;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
+    position: relative;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-	&.parallax {
-		background-position: 50% 0;
-		background-attachment: fixed;
-		background-repeat: repeat;
-	}
+    &.parallax {
+        background-position: 50% 0;
+        background-attachment: fixed;
+        background-repeat: repeat;
+    }
 
-	&.full-width {
-		.full-width;
-	}
+    &.full-width {
+        .full-width;
+    }
 
 }
 
 .bg-image, .bgimage-spacer,
 .parallax, .parallax-spacer {
 
-	@media (max-width: @screen-xs-max) {
-		height: 240px;
-		margin: 60px 0 60px 0;
-	}
+    @media (max-width: @screen-xs-max) {
+        height: 240px;
+        margin: 60px 0 60px 0;
+    }
 
-	@media (min-width: @screen-sm-min) {
-		height: 450px;
-		margin: 90px 0 90px 0;
-	}
+    @media (min-width: @screen-sm-min) {
+        height: 450px;
+        margin: 90px 0 90px 0;
+    }
 
-	&.fullscreen {
-		margin: 0;
-		height: auto;
-	}
+    &.fullscreen {
+        margin: 0;
+        height: auto;
+    }
 
 }
 
@@ -134,36 +134,36 @@ html, body {
    ========================================================================== */
 
 address.vc {
-	color: @vc_gray;
-	text-transform: uppercase;
-	font-weight: 300;
+    color: @vc_gray;
+    text-transform: uppercase;
+    font-weight: 300;
 
-	@media (max-width: @screen-xs-max) {
-		font-size: 20px;
+    @media (max-width: @screen-xs-max) {
+        font-size: 20px;
 
-		strong {
-			font-size: 36px;
-		}
+        strong {
+            font-size: 36px;
+        }
 
-	}
+    }
 
-	@media (min-width: @screen-sm-min) {
-		font-size: 24px;
+    @media (min-width: @screen-sm-min) {
+        font-size: 24px;
 
-		strong {
-			font-size: 48px;
-		}
+        strong {
+            font-size: 48px;
+        }
 
-	}
+    }
 
-	strong {
-		text-transform: lowercase;
-		font-weight: 400;
-	}
+    strong {
+        text-transform: lowercase;
+        font-weight: 400;
+    }
 
-	a {
-		color: @vc_gray;
-	}
+    a {
+        color: @vc_gray;
+    }
 
 }
 
@@ -175,41 +175,41 @@ address.vc {
 
 form.form-contact {
 
-	.has-feedback .form-control-feedback {
-		top: 0;
+    .has-feedback .form-control-feedback {
+        top: 0;
 
-		&.glyphicon-asterisk {
-			top: -13px;
-			right: -13px;
-		}
-	}
+        &.glyphicon-asterisk {
+            top: -13px;
+            right: -13px;
+        }
+    }
 
-	.glyphicon-asterisk {
-		color: @vc_gray;
-		font-size: 10px;
-	}
+    .glyphicon-asterisk {
+        color: @vc_gray;
+        font-size: 10px;
+    }
 
-	textarea {
-		max-width: 100%;
-	}
+    textarea {
+        max-width: 100%;
+    }
 
-	.loading-indicator {
-		display: none;
-	}
+    .loading-indicator {
+        display: none;
+    }
 
-	&.loading {
+    &.loading {
 
-		.loading-indicator {
-			display: inline;
-			background: #fff url('../img/logo-animation-black.gif') center center no-repeat;
-			background-size: 30px 30px;
-			padding: 42px 30px 0 0;
-			margin: 0 0 0 15px;
-			opacity: .4;
-			vertical-align: bottom;
-			.text-zero;
-		}
+        .loading-indicator {
+            display: inline;
+            background: #fff url('../img/logo-animation-black.gif') center center no-repeat;
+            background-size: 30px 30px;
+            padding: 42px 30px 0 0;
+            margin: 0 0 0 15px;
+            opacity: .4;
+            vertical-align: bottom;
+            .text-zero;
+        }
 
-	}
+    }
 
 }

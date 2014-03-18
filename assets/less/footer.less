@@ -3,63 +3,63 @@
    ========================================================================== */
 
 .global-footer {
-	background: @vc_black;
-	color: @vc_gray;
-	.small;
-	font-weight: 300;
-	letter-spacing: .1em;
-	text-align: center;
+    background: @vc_black;
+    color: @vc_gray;
+    .small;
+    font-weight: 300;
+    letter-spacing: .1em;
+    text-align: center;
 
-	@media (max-width: @screen-xs-max) {
-		padding: 30px 0;
-		margin: 50px 0 0 0;
-	}
+    @media (max-width: @screen-xs-max) {
+        padding: 30px 0;
+        margin: 50px 0 0 0;
+    }
 
-	@media (min-width: @screen-sm-min) {
-		padding: 60px 0;
-		margin: 100px 0 0 0;
-	}
+    @media (min-width: @screen-sm-min) {
+        padding: 60px 0;
+        margin: 100px 0 0 0;
+    }
 
-	&.fixed {
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-	}
+    &.fixed {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
 
-	.logo {
-		.pulse;
-	}
+    .logo {
+        .pulse;
+    }
 
-	.social-networks {
-		.list-inline;
+    .social-networks {
+        .list-inline;
 
-		a {
-			display: inline-block;
-			width: 20px;
-			height: 20px;
-			margin: 15px 0;
-			background: transparent url('../img/social-icons.png') 0 0 no-repeat;
-			background-size: 40px 40px;
-			box-shadow: 0 0 2px @vc_gray;
-			.transition-property( background-position-y );
-			.transition-duration( .1s );
-			.transition-timing-function( ease-in-out );
+        a {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin: 15px 0;
+            background: transparent url('../img/social-icons.png') 0 0 no-repeat;
+            background-size: 40px 40px;
+            box-shadow: 0 0 2px @vc_gray;
+            .transition-property( background-position-y );
+            .transition-duration( .1s );
+            .transition-timing-function( ease-in-out );
 
-			&:hover, &:active {
-				background-position-y: -20px;
-			}
+            &:hover, &:active {
+                background-position-y: -20px;
+            }
 
-		}
+        }
 
-		.facebook a {
-			background-position-x: 0;
-		}
+        .facebook a {
+            background-position-x: 0;
+        }
 
-		.vimeo a {
-			background-position-x: -20px;
-		}
+        .vimeo a {
+            background-position-x: -20px;
+        }
 
-	}
+    }
 
 }

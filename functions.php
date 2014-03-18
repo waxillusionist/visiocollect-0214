@@ -20,28 +20,28 @@ define( 'THEME_JQUERY_VERSION', '1.11.0' );
    ========================================================================== */
 
 foreach( array(
-	'inc/setup.php',
-	'inc/contactform.php',
-	'inc/ops-redirect.php',
-	'inc/cleanup.php',
-	'inc/relative-urls.php',
-	'inc/custom-post-types.php',
-	'inc/multiple-post-thumbnails.php',
-	'inc/opengraph.php',
-	'inc/scriptsnstyles.php',
-	'inc/theme.php',
-	'inc/vendor/wp_bootstrap_navwalker.php',
-	'inc/shortcodes-grid.php',
-	'inc/shortcodes-typography.php',
-	'inc/shortcodes-buttons.php',
-	'inc/shortcodes-buttons.php',
-	'inc/shortcodes-gmap.php',
-	'inc/shortcodes-bgimage.php',
-	'inc/shortcodes-gallery.php',
-	'inc/shortcodes-spacer.php',
-	'inc/shortcodes-spektrum.php',
-	'inc/shortcodes-heightfix.php'
+    'inc/setup.php',
+    'inc/contactform.php',
+    'inc/ops-redirect.php',
+    'inc/cleanup.php',
+    'inc/relative-urls.php',
+    'inc/custom-post-types.php',
+    'inc/multiple-post-thumbnails.php',
+    'inc/opengraph.php',
+    'inc/scriptsnstyles.php',
+    'inc/theme.php',
+    'inc/vendor/wp-bootstrap-navwalker/wp_bootstrap_navwalker.php',
+    'inc/shortcodes-grid.php',
+    'inc/shortcodes-typography.php',
+    'inc/shortcodes-buttons.php',
+    'inc/shortcodes-buttons.php',
+    'inc/shortcodes-gmap.php',
+    'inc/shortcodes-bgimage.php',
+    'inc/shortcodes-gallery.php',
+    'inc/shortcodes-spacer.php',
+    'inc/shortcodes-spektrum.php',
+    'inc/shortcodes-heightfix.php'
 ) as $f )
-	require_once THEME_ABSPATH.$f;
+    require_once THEME_ABSPATH.$f;
 
 ?>
