@@ -18,7 +18,7 @@ Anschließend kann mit dem Befehl `grunt` die Entwicklung gestartet werden. Als 
 
 Der Watch Task überwacht nun sämtliche Projektdateien und löst gegebenenfalls die Preprocessor Tasks und/oder einen Reload des Browsers aus. (CTRL-C beendet den Task)
 
-Für den Livereload Funktion wird ein entsprechner Browser Plugin benötigt. (z.b. [Livereload für Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei))
+Für die Livereload Funktion wird ein entsprechner Browser Plugin benötigt. (z.b. [Livereload für Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei))
 
 Bevor das Projekt hochgeladen bzw. mit der Online Version synchronisiert wird, sollte der Task `grunt build` ausgeführt werden um *aufzuräumen*.
 
