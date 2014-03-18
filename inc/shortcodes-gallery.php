@@ -30,7 +30,7 @@ function vc_gallery_shortcode( $output, $attr ) {
         'order'      => 'ASC',
         'orderby'    => 'menu_order ID',
         'id'         => $post->ID,
-        'link'       => '',
+        'link'       => 'file',
         'include'    => '',
         'exclude'    => '',
         'size'       => 'thumbnail',
@@ -41,12 +41,12 @@ function vc_gallery_shortcode( $output, $attr ) {
         'columns_lg' => '',
         'style'      => 'grid',
         'lightbox'   => 'true',
-        'indicators' => 'true',
+        'indicators' => 'false',
         'controls'   => 'true',
         'autostart'  => 'true',
         'loop'       => 'true',
         'interval'   => '0',
-        'pause'      => 'hover',
+        'pause'      => 'false',
         'class'      => ''
     ),$attr));
     $id = intval($id);
