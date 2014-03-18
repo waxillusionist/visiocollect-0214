@@ -1,0 +1,96 @@
+/* =============================================================================
+   Ekko lightbox
+   ========================================================================== */
+
+.modal-backdrop {
+    background: #fff;
+
+    &.in {
+        .opacity(.9);
+    }
+
+}
+
+.ekko-lightbox {
+
+    .modal-content {
+        border: none;
+
+
+        .modal-header,
+        .modal-body {
+            padding: 0;
+        }
+
+        .close,
+        .modal-title {
+            z-index: 1;
+            position: absolute;
+            top: 0;
+        }
+
+        .modal-title {
+            left: 0;
+            .boxed-headline;
+
+            &:after {
+                display: none;
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .modal-header {
+            min-height: 0;
+            border: none;
+        }
+
+        .modal-body {
+        }
+
+        .ekko-lightbox-nav-overlay {
+
+            .glyphicon-chevron-left,
+            .glyphicon-chevron-right {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 15%;
+                .opacity(.5);
+                color: #fff;
+                text-align: center;
+                text-shadow: 0 1px 2px fade(#000,60%);
+
+                &:hover {
+                    .opacity(1);
+                }
+
+                &:before {
+                    width: 30px;
+                    height: 30px;
+                    font-size: 30px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin: -15px 0 0 -15px;
+                }
+
+            }
+
+            .glyphicon-chevron-left {
+                left: 0;
+            }
+
+            .glyphicon-chevron-right {
+                right: 0;
+            }
+
+        }
+
+    }
+
+}

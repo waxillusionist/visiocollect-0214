@@ -71,7 +71,7 @@ add_action( 'wp_head', 'vc_fix_ltie9' );
    ========================================================================== */
 
 function vc_scripts_n_styles() {
-    wp_enqueue_style('vc-styles', THEME_URI.'assets/css/styles.min.css', array(), 'd8c0');
+    wp_enqueue_style('vc-styles', THEME_URI.'assets/css/styles.min.css', array(), 'cb5e');
     wp_register_script('modernizr', THEME_URI.'assets/js/vendor/modernizr/modernizr.min.js', array(), null, true);
     wp_register_script('gmaps-api', 'https://maps.google.com/maps/api/js?sensor=false', array(), null, true);
     $script_dependencies = array('modernizr','jquery','gmaps-api');
