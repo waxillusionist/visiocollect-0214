@@ -40,8 +40,23 @@
 
         .close {
             position: absolute;
-            top: 0;
             right: 0;
+            width: 30px;
+            height: 30px;
+            margin: 0;
+            line-height: 30px;
+            font-size: 24px;
+            background: @vc_gray;
+            text-shadow: none;
+            color: #fff;
+            .opacity(1);
+            .transition-duration(.4s);
+            .transition-transform(transform);
+
+            &:hover {
+                background: @vc_blue;
+            }
+
         }
 
         .modal-header {
