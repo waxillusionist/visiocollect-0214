@@ -24,6 +24,7 @@
     "grunt-contrib-concat": "*",
     "grunt-contrib-less": "*",
     "grunt-autoprefixer": "*",
+    "grunt-contrib-csslint": "*",
     "grunt-contrib-coffee": "*",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-uglify": "*",

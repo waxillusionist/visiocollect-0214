@@ -178,6 +178,18 @@ module.exports = function(grunt) {
         },
 
         /* =============================================================================
+           Task Config: CSSLint
+           ========================================================================== */
+
+        csslint: {
+            options: {
+            },
+            src: [
+                'assets/css/styles.min.css'
+            ]
+        },
+
+        /* =============================================================================
            Task config: Coffeescript
            ========================================================================== */
 
@@ -386,7 +398,8 @@ module.exports = function(grunt) {
     grunt.registerTask( 'build-css', [
         'clean:css',
         'less',
-        'autoprefixer'
+        //'autoprefixer',
+        //'csslint'
     ]);
     grunt.registerTask( 'build-js', [
         'clean:js',
