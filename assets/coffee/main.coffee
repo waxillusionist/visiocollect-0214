@@ -307,7 +307,7 @@
         $('.map-anfahrt').each ->
             address = $(this).data('address')
             zoom = $(this).data('zoom')
-            $(this).gmap3 ->
+            $(this).gmap3
                 map:
                     options:
                         styles: [
@@ -322,7 +322,7 @@
                 marker:
                     values:[
                         address: address
-                        data: '<p style="font-weight:400;margin:.2em;letter-spacing:.1em;font-family:Gravur,sans-serif;font-size:16px;color:#000;white-space:nowrap;display:block;">'+
+                        data: '<p style="font-weight:400;margin:.2em;letter-spacing:.1em;font-family:Gravia,sans-serif;font-size:16px;color:#000;white-space:nowrap;display:block;">'+
                             'Visiocollect Areal<br>'+
                             '<a style="color:#000;text-decoration:none;" href="http://maps.google.com/maps?'+
                             'daddr='+encodeURIComponent(address)+
