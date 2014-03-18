@@ -225,7 +225,7 @@
                                         $group.append $('<p class="response help-block">'+this[1]+'</p>')
                             else
                                 $form.append('<div class="alert alert-success"><span class="glyphicon glyphicon-ok pull-right"></span>'+data.success+'</div>')
-                                    .find('input[type="text"],input[type="tel"],input[type="email"],textarea').val('')
+                                    #.find('input[type="text"],input[type="tel"],input[type="email"],textarea').val('')
                         error: (XMLHttpRequest, textStatus, errorThrown) ->
                             console.debug(textStatus)
                         complete: ->
