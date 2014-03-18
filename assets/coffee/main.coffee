@@ -62,7 +62,7 @@
 
         $('.gallery-style-grid').each ->
             $gallery = $(this)
-            $items = gallery.find '.gallery-item'
+            $items = $gallery.find '.gallery-item'
             $w = $(window)
             $w.on
                 'resize.gridGallery': ->
@@ -71,13 +71,13 @@
                     cols = []
                     $items.detach()
                     $gallery.empty()
-                    items.each ->
+                    $items.each ->
                         $this = $(this)
                         shortest_col = 0
                         for c in [0...colcount]
                             if !cols[c]
                                 cols[c] = [ $('<ul class="col'+colcount+'"/>'), 0 ]
-                                gallery.append cols[c][0]
+                                $gallery.append cols[c][0]
                             shortest_col = if shortest_col!=c and cols[c][1]<cols[shortest_col][1] then c else shortest_col
                         cols[shortest_col][1] += parseInt $this.find('.gallery-icon img').attr('height')
                         cols[shortest_col][0].append $('<li/>').append($this)
