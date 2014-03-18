@@ -1,4 +1,4 @@
-Visiocollect 02/14 Wordpress Theme
+Visiocollect 02/14 WordPress Theme
 ==================================
 
 ## Einrichtung der Entwicklungsumgebung
@@ -14,13 +14,23 @@ npm install
 bower install
 ```
 
-Anschließend kann mit dem Befehl `grunt` die Entwicklung gestartet werden. Als Editor empfehle ich [Sublime](http://www.sublimetext.com/).
+Anschließend kann mit dem Befehl `grunt` die Entwicklung gestartet werden.
 
 Der Watch Task überwacht nun sämtliche Projektdateien und löst gegebenenfalls die Preprocessor Tasks und/oder einen Reload des Browsers aus. (CTRL-C beendet den Task)
 
 Für die Livereload Funktion wird ein entsprechner Browser Plugin benötigt. (z.b. [Livereload für Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei))
 
 Bevor das Projekt hochgeladen bzw. mit der Online Version synchronisiert wird, sollte der Task `grunt build` ausgeführt werden um *aufzuräumen*.
+
+Als Editor empfehle ich [Sublime](http://www.sublimetext.com/) mit diversen Plugins
+([Package Control](https://sublime.wbond.net/packages/Package%20Control),
+[SideBarEnhancements](https://sublime.wbond.net/packages/SideBarEnhancements),
+[EditorConfig](https://sublime.wbond.net/packages/EditorConfig),
+[SFTP](https://sublime.wbond.net/packages/SFTP),
+[Terminal](https://sublime.wbond.net/packages/Terminal),
+[LESS](https://sublime.wbond.net/packages/LESS),
+[Better Coffeescript](https://sublime.wbond.net/packages/Better%20CoffeeScript),
+[WordPress](https://sublime.wbond.net/packages/WordPress), u.a.).
 
 ## Shortcodes
 
