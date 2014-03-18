@@ -31,7 +31,7 @@ function vc_contactform_handler() {
             $site_url = get_home_url();
             $recipient = $site_name." <".get_bloginfo('admin_email').">";
             $sender = $cfd['name']." <".$cfd['email'].">";
-            $subject = '['.$site_name.'] '.( empty($cfd['subject']) ? utf8_decode($cfd['subject']) : '(kein Betreff)' );
+            $subject = '['.$site_name.'] '.( !empty($cfd['subject']) ? utf8_decode($cfd['subject']) : '(kein Betreff)' );
             $header = "From: ".$sender.
                 "\nReply-To: ".$sender.
                 ( $cfd['sendcopy'] ? "\nCC: ".$sender : '' ).
@@ -45,7 +45,7 @@ function vc_contactform_handler() {
                 "\nName: ".utf8_decode($cfd['name']).
                 "\nE-Mail: ".utf8_decode($cfd['email']).
                 ( !empty($cfd['phone']) ? "\nTelefon: ".utf8_decode($cfd['phone']) : '' );
-            if( @mail( $recipient, $subject, '', $header, ' -f "'.$sender.'"' ) )
+            if( mail( $recipient, $subject, '', $header ) )
                 $cfs = '<strong>Ihre Nachricht wurde erfolgreich gesendet.</strong>'.( $cfd['sendcopy'] ? '<br>Eine Kopie wurde an ihr Postfach gesendet.' : '' );
             else
                 array_push( $cfe, array( '#', '<strong>Es ist ein unerwarteter Fehler aufgetreten.</strong><br>Die Nachricht konnte leider nicht gesendet werden.' ) );
