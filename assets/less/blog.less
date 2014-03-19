@@ -3,12 +3,23 @@
    ========================================================================== */
 
 .post-single,
-.post-excerpt {
+.post-excerpt,
+.post-preview {
     position: relative;
+}
+
+.entry-title {
+
+    .glyphicon {
+        font-size: .6em;
+        line-height: 1;
+        padding-right: .4em;
+    }
 
 }
 
 .post-excerpt .entry-title,
+.post-preview .entry-title,
 .entry-date {
     color: #fff;
     font-weight: 300;
@@ -52,17 +63,8 @@
 
 }
 
-.post-excerpt {
-    border-bottom: 1px dotted @vc_black;
-    margin-bottom: 40px;
-
-    .entry-header {
-        margin-bottom: 10px;
-    }
-
-    .entry-date {
-        top: 0;
-    }
+.post-excerpt,
+.post-preview {
 
     .entry-title {
         margin: 0;
@@ -73,7 +75,7 @@
         border-top: none;
 
         a {
-            padding: .75em 110px .55em .8em;
+            padding: .75em .8em .55em .8em;
             display: block;
             color: #fff;
             text-decoration: none;
@@ -84,6 +86,24 @@
 
         }
 
+    }
+
+    .entry-date {
+        top: 0;
+    }
+
+}
+
+.post-excerpt {
+    border-bottom: 1px dotted @vc_black;
+    margin-bottom: 40px;
+
+    .entry-header {
+        margin-bottom: 10px;
+    }
+
+    .entry-title a {
+        padding-right: 110px;
     }
 
     &.with-thumb {
@@ -136,6 +156,68 @@
 
 }
 
+.blog-overview {
+    margin-top: 40px;
+}
+
+.post-preview {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 30px;
+    overflow: hidden;
+    .screen({
+        height: 400px;
+    },{
+        height: 250px;
+    },{
+        height: 300px
+    });
+
+    .entry-excerpt {
+        background: fade(#fff,65%);
+        padding: 10px;
+    }
+
+    &:first-child:last-child {
+        .screen({
+        },{
+            height: 530px;
+        },{
+            height: 630px
+        });
+    }
+
+    .col + .col & {
+        .entry-excerpt {
+            .screen-sm({
+                display: none;
+            });
+        }
+    }
+
+    .entry-link {
+        a {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .preview-wrap {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    &:first-child:last-child .preview-wrap {
+        max-height: 50%;
+    }
+
+
+}
 
 /* =============================================================================
    Index Pagination

@@ -90,7 +90,7 @@ add_action( 'widgets_init', 'vc_widgets_init' );
    ========================================================================== */
 
 function vc_excerpt_word_count( $length ) {
-    return 100;
+    return 40;
 }
 add_filter( 'excerpt_length', 'vc_excerpt_word_count', 999 );
 

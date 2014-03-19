@@ -57,7 +57,13 @@ if( $childposts->have_posts() ) {
         <div class="container">
             <article data-ops="<?php echo esc_attr( $post->post_name=='blog' ? get_home_url(null,'/blog/') : ( $post->post_name=='spektrum' ? '/spektrum/' : get_permalink() ) ); ?>" <?php post_class(); ?>>
                 <header class="entry-header">
-                    <h2 class="entry-title"><?php the_title(); ?></h2>
+                    <h2 class="entry-title">
+                        <?php if($post->post_name=='blog') { ?>
+                            <a href="/blog/"><span class="glyphicon glyphicon-chevron-right"></span><?php the_title(); ?></a>
+                        <?php } else { ?>
+                            <?php the_title(); ?>
+                        <?php } ?>
+                    </h2>
                 </header>
                 <div class="entry-content">
                     <?php the_content(); ?>

@@ -40,6 +40,7 @@ foreach( array(
     'inc/shortcodes-gallery.php',
     'inc/shortcodes-spacer.php',
     'inc/shortcodes-spektrum.php',
+    'inc/shortcodes-blog.php',
     'inc/shortcodes-heightfix.php'
 ) as $f )
     require_once THEME_ABSPATH.$f;
