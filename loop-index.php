@@ -16,10 +16,7 @@ $post_class = 'post-excerpt'.( $thumb ? ' with-thumb' : '' );
         <?php } ?>
         <h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
         <a class="entry-link" href="<?php the_permalink(); ?>" rel="bookmark"><span class="glyphicon glyphicon-link"></span></a>
-        <div class="entry-date">
-            <span class="day"><?php the_time('j'); ?></span>
-            <span class="monthyear"><?php the_time('M Y'); ?></span>
-        </div>
+        <time class="entry-date published" datetime="<?php the_time('c'); ?>"><?php the_time('j. M Y'); ?></time>
     </header>
     <div class="entry-content">
         <?php the_excerpt(); ?>
