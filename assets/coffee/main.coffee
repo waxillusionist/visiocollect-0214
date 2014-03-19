@@ -73,14 +73,15 @@
                     $gallery.empty()
                     $items.each ->
                         $this = $(this)
+                        $img = $this.find('.gallery-icon img')
                         shortest_col = 0
                         for c in [0...colcount]
                             if !cols[c]
                                 cols[c] = [ $('<ul class="col'+colcount+'"/>'), 0 ]
                                 $gallery.append cols[c][0]
                             shortest_col = if shortest_col!=c and cols[c][1]<cols[shortest_col][1] then c else shortest_col
-                        cols[shortest_col][1] += parseInt $this.find('.gallery-icon img').attr('height')
                         cols[shortest_col][0].append $('<li/>').append($this)
+                        cols[shortest_col][1] += Math.round( $this.width() * parseInt($img.attr('height')) / parseInt($img.attr('width')) )
                     if $.skrollr
                         $.skrollr.refresh()
             .trigger 'resize.gridGallery'
