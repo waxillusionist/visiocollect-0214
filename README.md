@@ -3,16 +3,15 @@ Visiocollect 02/14 WordPress Theme
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Inhalt**
 
 - [Einrichtung der Entwicklungsumgebung](#einrichtung-der-entwicklungsumgebung)
 - [Bilder und Mediendateien](#bilder-und-mediendateien)
 - [Shortcodes](#shortcodes)
     - [Grid](#grid)
-        - [Grid Beispiel 1: 2 Spalten auf Tablets und größer](#grid-beispiel-1-2-spalten-auf-tablets-und-größer)
-        - [Grid Beispiel 2: 3 Spalten auf Tablets und größer, wobei die Spalten 1 und 2 ihre Größe abhängig vom Viewport verändern](#grid-beispiel-2-3-spalten-auf-tablets-und-größer-wobei-die-spalten-1-und-2-ihre-größe-abhängig-vom-viewport-verändern)
-        - [Grid Beispiel 3: 2 Zeilen, Spalten mit Offset, die Spalten der unteren Zeile tauschen die Position](#grid-beispiel-3-2-zeilen-spalten-mit-offset-die-spalten-der-unteren-zeile-tauschen-die-position)
-        - [Grid Beispiel 4: Verschachtelte Zeilen und Spalten](#grid-beispiel-4-verschachtelte-zeilen-und-spalten)
+        - [Grid Beispiel 1](#grid-beispiel-1)
+        - [Grid Beispiel 2](#grid-beispiel-2)
+        - [Grid Beispiel 3](#grid-beispiel-3)
+        - [Grid Beispiel 4](#grid-beispiel-4)
     - [Clear](#clear)
     - [Galerien](#galerien)
     - [Background Container](#background-container)
@@ -88,7 +87,10 @@ Außerdem besteht die Möglichkeit über die Parameter `*_offset`, `*_pull` und 
 
 Da in Wordpress Shortcodes mit gleichem Namen nicht verschachtelt werden können, stehen alternative Namen `[row0]` bis `[row9]` und `[col0]` bis `[col9]` zur Verfügung (siehe Beispiel 4).
 
-#### Grid Beispiel 1: 2 Spalten auf Tablets und größer
+#### Grid Beispiel 1
+
+2 Spalten auf Tablets und größer
+
 ```
 [row]
     [col sm=6]
@@ -100,7 +102,10 @@ Da in Wordpress Shortcodes mit gleichem Namen nicht verschachtelt werden können
 [/row]
 ```
 
-#### Grid Beispiel 2: 3 Spalten auf Tablets und größer, wobei die Spalten 1 und 2 ihre Größe abhängig vom Viewport verändern
+#### Grid Beispiel 2
+
+3 Spalten auf Tablets und größer, wobei die Spalten 1 und 2 ihre Größe abhängig vom Viewport verändern
+
 ```
 [row]
     [col sm=4 md=3 lg=2]
@@ -115,7 +120,10 @@ Da in Wordpress Shortcodes mit gleichem Namen nicht verschachtelt werden können
 [/row]
 ```
 
-#### Grid Beispiel 3: 2 Zeilen, Spalten mit Offset, die Spalten der unteren Zeile tauschen die Position
+#### Grid Beispiel 3
+
+2 Zeilen, Spalten mit Offset, die Spalten der unteren Zeile tauschen die Position
+
 ```
 [row]
     [col sm=8 sm_offset=2]
@@ -132,7 +140,10 @@ Da in Wordpress Shortcodes mit gleichem Namen nicht verschachtelt werden können
 [/row]
 ```
 
-#### Grid Beispiel 4: Verschachtelte Zeilen und Spalten
+#### Grid Beispiel 4
+
+Verschachtelte Zeilen und Spalten
+
 ```
 [row]
     [col sm=3]
