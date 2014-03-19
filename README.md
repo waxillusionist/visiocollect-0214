@@ -1,6 +1,28 @@
 Visiocollect 02/14 WordPress Theme
 ==================================
 
+<!-- MarkdownTOC depth=3 -->
+
+- Einrichtung der Entwicklungsumgebung
+- Bilder und Mediendateien
+- Shortcodes
+    - Grid
+    - Clear
+    - Galerien
+    - Background Container
+    - Parallax Container
+    - Google Maps
+    - Zitate
+    - Hervorgehobene Absätze
+    - Buttons
+    - Icons
+    - Heightfix
+    - Spacer
+    - Spektrum
+
+<!-- /MarkdownTOC -->
+
+
 ## Einrichtung der Entwicklungsumgebung
 
 Stelle sicher, dass [Node](http://nodejs.org/), [Grunt](http://gruntjs.com/) und [Bower](http://bower.io/) auf deinem System installiert sind.
@@ -59,7 +81,7 @@ Die Shortcodes `[row]` und `[col]` erstellen Grid-Container gemäß dem [Bootstr
 Während `[row]` keine Parameter hat, kann bei `[col]` die Spaltenbreite für den jeweiligen Viewport `xs`, `sm`, `md` und `lg` eingestellt werden.
 Außerdem besteht die Möglichkeit über die Parameter `*_offset`, `*_pull` und `*_push` die Platzierung auf dem jeweiligen Viewport anzupassen.
 
-Da in Wordpress Shortcodes mit gleichem Namen nicht verschachtelt werden können, stehen alternative Namen `[row0]` bis `[row9]` und `[col0]` bis `[col9] zur Verfügung (siehe Beispiel 4).
+Da in Wordpress Shortcodes mit gleichem Namen nicht verschachtelt werden können, stehen alternative Namen `[row0]` bis `[row9]` und `[col0]` bis `[col9]` zur Verfügung (siehe Beispiel 4).
 
 #### Grid Beispiel 1: 2 Spalten auf Tablets und größer
 ```
