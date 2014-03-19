@@ -5,7 +5,7 @@
    ========================================================================== */
 
 $post_id = get_the_id();
-$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'large' );
+$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'thumb_ratio' );
 $post_class = 'post-excerpt'.( $thumb ? ' with-thumb' : '' );
 $thumb_style = $thumb ? ' style="background-image:url('.$thumb[0].')"' : '';
 

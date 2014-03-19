@@ -30,10 +30,10 @@ function vc_gallery_shortcode( $output, $attr ) {
         'order'      => 'ASC',
         'orderby'    => 'menu_order ID',
         'id'         => $post->ID,
-        'link'       => 'file',
+        'link'       => 'large',
         'include'    => '',
         'exclude'    => '',
-        'size'       => 'thumbnail',
+        'size'       => 'thumb_ratio',
         'columns'    => '4',
         'columns_xs' => '',
         'columns_sm' => '',
@@ -234,9 +234,9 @@ function vc_gallery_shortcode( $output, $attr ) {
                 $title = trim($attachment->post_title);
                 $caption = trim($attachment->post_excerpt);
                 $has_caption = !empty($caption) ? true : false;
-                if( $link=='file' ) {
+                if( $link=='file' || $link=='large' ) {
                     $_img = wp_get_attachment_image_src( $id, $size );
-                    $_img_link = wp_get_attachment_image_src( $id, 'full' );
+                    $_img_link = wp_get_attachment_image_src( $id, ($link=='large'?'large':'full') );
                     $img = '<a href="'.$_img_link[0].'"'.
                         ( $lightbox ?
                             ' data-toggle="lightbox"'.

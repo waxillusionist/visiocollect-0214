@@ -36,9 +36,8 @@ function vc_setup() {
 
     // add support for post thumbnails and custom image sizes
     add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size( 320, 0, false );
-    add_image_size( 'grid_gallery', 400, 0, false );
-    add_image_size( 'ogp', 250, 250, true );
+    set_post_thumbnail_size( 380, 0, false );
+    add_image_size( 'thumb_ratio', 380, 0, false );
 
     // register menus
     register_nav_menus(array(
