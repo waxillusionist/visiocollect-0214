@@ -86,6 +86,39 @@
                         $.skrollr.refresh()
             .trigger 'resize.gridGallery'
 
+        #--- Blog Grid
+
+        $('.blog-grid').each ->
+            $container = $(this)
+            $articles = $container.find('article')
+            $w = $(window)
+            $w.on
+                'resize.blogGrid': ->
+                    ww = $w.width()
+                    colcount = if ww<768 then 1 else ( if ww<992 then 2 else 3 )
+                    cols = []
+                    $articles.detach()
+                    $container.empty()
+                    $articles.each ->
+                        $this = $(this)
+                        shortest_col = 0
+                        for c in [0...colcount]
+                            if !cols[c]
+                                cols[c] = [ $('<div class="col-sm-'+(12 / colcount)+'"/>'), 0 ]
+                                $container.append cols[c][0]
+                            shortest_col = if shortest_col!=c and cols[c][1]<cols[shortest_col][1] then c else shortest_col
+                        cols[shortest_col][0].append $this
+                        if $this.hasClass 'with-thumb'
+                            $thumb = $this.find('.entry-thumb').hide()
+                            cols[shortest_col][1] += $this.outerHeight() + Math.round( $this.width() * parseInt($thumb.attr('height')) / parseInt($thumb.attr('width')) )
+                            $thumb.show()
+                        else
+                            cols[shortest_col][1] += $this
+                        cols[shortest_col][1] += if $this.hasClass('with-thumb') then $this.height() + parseInt($this.find('.entry-thumb').attr('height')) else $this.height()
+                    if $.skrollr
+                        $.skrollr.refresh()
+            .trigger 'resize.blogGrid'
+
         #--- ekko Lightbox
 
         $(document).on

@@ -12,6 +12,7 @@ if( have_posts() ) {
 
     ?>
     <div class="container">
+        <h2 class="entry-title">Blog</h2>
         <div class="row blog-grid">
             <?php
             $i = 0;

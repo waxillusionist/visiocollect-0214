@@ -71,11 +71,11 @@ add_action( 'wp_head', 'vc_fix_ltie9' );
    ========================================================================== */
 
 function vc_scripts_n_styles() {
-    wp_enqueue_style('vc-styles', THEME_URI.'assets/css/styles.min.css', array(), '3aef');
+    wp_enqueue_style('vc-styles', THEME_URI.'assets/css/styles.min.css', array(), '1bb2');
     wp_register_script('modernizr', THEME_URI.'assets/js/vendor/modernizr/modernizr.min.js', array(), null, true);
     wp_register_script('gmaps-api', 'https://maps.google.com/maps/api/js?sensor=false', array(), null, true);
     $script_dependencies = array('modernizr','jquery','gmaps-api');
-    wp_register_script('vc-scripts', THEME_URI.'assets/js/scripts.min.js', $script_dependencies, '1f2e', true);
+    wp_register_script('vc-scripts', THEME_URI.'assets/js/scripts.min.js', $script_dependencies, '0a0c', true);
     wp_enqueue_script('vc-scripts');
 }
 add_action( 'wp_enqueue_scripts', 'vc_scripts_n_styles', 99 );
