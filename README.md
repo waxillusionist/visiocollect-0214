@@ -46,7 +46,7 @@ Der Watch Task überwacht nun sämtliche Projektdateien und löst gegebenenfalls
 
 Für die Livereload Funktion wird ein entsprechender Browser Plugin benötigt. (z.b. [Livereload für Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei))
 
-Bevor das Projekt hochgeladen bzw. mit der Online Version synchronisiert wird, sollte der Task `grunt build` ausgeführt werden um *aufzuräumen*.
+Bevor das Projekt hochgeladen bzw. mit der Online Version synchronisiert wird, sollte der Task `grunt build` ausgeführt werden um aufzuräumen und die Quelldateien nochmals zu parsen.
 
 Als Editor empfehle ich [Sublime](http://www.sublimetext.com/) mit diversen Plugins
 ([Package Control](https://sublime.wbond.net/packages/Package%20Control),
@@ -60,10 +60,6 @@ Als Editor empfehle ich [Sublime](http://www.sublimetext.com/) mit diversen Plug
 
 ## Bilder und Mediendateien
 
-Alle Bilder und Medien werden entsprechend ihrer Parent-Container und Platzierung eingepasst. Die Abmessungen der jeweiligen Container variieren abhängig von der Größe des Viewports.
-
-Bilder sollten daher immer mit den größtmöglichen Abmessungen hochgeladen werden und die Skalierung derselben sollte dem Theme überlassen werden. Größenverhältnisse müssen natürlich trotzdem beachtet werden.
-
 Innerhalb des Contents können die drei Standardgrößen der Bilder verwendet werden. Diesen sollten unter *Einstellungen / Medien* folgende Größen zugeordnet sein:
 
 - `thumbnail` 380 x 380 (beschnitten)
@@ -73,8 +69,23 @@ Innerhalb des Contents können die drei Standardgrößen der Bilder verwendet we
 Für die Verwendung im Theme werden noch weitere Größen generiert:
 
 - `thumb_ratio` 380 x 0
+- `fullscreen` 1600 x 0
 
-Bildergalerien verwenden in der Standardeinstellung die Größe `thumb_ratio` für Vorschaubilder und `large` für die Lightbox.
+Bildergalerien verwenden in der Standardeinstellung die Größe `thumb_ratio` für Vorschaubilder und `large` für die Lightbox. Die Größe `thumbnail` wird außerdem für das Open Graph Protokoll eingesetzt.
+
+### Bildergrößen beim Upload
+
+Alle Bilder und Medien werden entsprechend ihrer Parent-Container und Platzierung eingepasst. Die Abmessungen der jeweiligen Container variieren abhängig von der Größe des Viewports.
+
+Bilder sollten daher immer mit den größtmöglichen Abmessungen hochgeladen werden und die Skalierung derselben sollte dem Theme überlassen werden. Größenverhältnisse müssen natürlich trotzdem beachtet werden.
+
+Wenn ein Bild beispielsweise für eine Galerie verwendet werden soll, muss es beim Upload mind. 1280 Pixel breit sein, damit es ausreichend groß für die Lightbox ist.
+
+Soll ein Bild ausschließlich für einen Slider verwendet werden, der die Bildgröße `medium` verwendet, genügt es, wenn das Bild beim Upload mind. 640 Pixel breit ist.
+
+Soll ein Bild für einen Vollbild-Hintergrund bzw. Parallax-Effekt verwendet werden, sollte es beim Upload mind. 1600 Pixel breit sein.
+
+Bei Bildern für Slider ist außerdem zu beachten, dass alle Bilder eines Sliders dieselben Größenverhältnisse haben sollten, damit sich die Größe des Sliders nicht von Bild zu Bild ändert.
 
 ## Shortcodes
 
