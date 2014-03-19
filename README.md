@@ -6,6 +6,7 @@ Visiocollect 02/14 WordPress Theme
 
 - [Einrichtung der Entwicklungsumgebung](#einrichtung-der-entwicklungsumgebung)
 - [Bilder und Mediendateien](#bilder-und-mediendateien)
+    - [Bildergrößen beim Upload](#bildergrößen-beim-upload)
 - [Shortcodes](#shortcodes)
     - [Grid](#grid)
         - [Grid Beispiel 1](#grid-beispiel-1)
