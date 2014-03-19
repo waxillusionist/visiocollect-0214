@@ -1,26 +1,8 @@
 Visiocollect 02/14 WordPress Theme
 ==================================
 
-<!-- MarkdownTOC depth=3 -->
-
-- Einrichtung der Entwicklungsumgebung
-- Bilder und Mediendateien
-- Shortcodes
-    - Grid
-    - Clear
-    - Galerien
-    - Background Container
-    - Parallax Container
-    - Google Maps
-    - Zitate
-    - Hervorgehobene Absätze
-    - Buttons
-    - Icons
-    - Heightfix
-    - Spacer
-    - Spektrum
-
-<!-- /MarkdownTOC -->
+* auto-gen TOC:
+{:toc}
 
 
 ## Einrichtung der Entwicklungsumgebung
