@@ -1,9 +1,32 @@
 Visiocollect 02/14 WordPress Theme
 ==================================
 
-* auto-gen TOC:
-{:toc}
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Inhalt**
 
+- [Einrichtung der Entwicklungsumgebung](#einrichtung-der-entwicklungsumgebung)
+- [Bilder und Mediendateien](#bilder-und-mediendateien)
+- [Shortcodes](#shortcodes)
+    - [Grid](#grid)
+        - [Grid Beispiel 1: 2 Spalten auf Tablets und größer](#grid-beispiel-1-2-spalten-auf-tablets-und-größer)
+        - [Grid Beispiel 2: 3 Spalten auf Tablets und größer, wobei die Spalten 1 und 2 ihre Größe abhängig vom Viewport verändern](#grid-beispiel-2-3-spalten-auf-tablets-und-größer-wobei-die-spalten-1-und-2-ihre-größe-abhängig-vom-viewport-verändern)
+        - [Grid Beispiel 3: 2 Zeilen, Spalten mit Offset, die Spalten der unteren Zeile tauschen die Position](#grid-beispiel-3-2-zeilen-spalten-mit-offset-die-spalten-der-unteren-zeile-tauschen-die-position)
+        - [Grid Beispiel 4: Verschachtelte Zeilen und Spalten](#grid-beispiel-4-verschachtelte-zeilen-und-spalten)
+    - [Clear](#clear)
+    - [Galerien](#galerien)
+    - [Background Container](#background-container)
+    - [Parallax Container](#parallax-container)
+    - [Google Maps](#google-maps)
+    - [Zitate](#zitate)
+    - [Hervorgehobene Absätze](#hervorgehobene-absätze)
+    - [Buttons](#buttons)
+    - [Icons](#icons)
+    - [Heightfix](#heightfix)
+    - [Spacer](#spacer)
+    - [Spektrum](#spektrum)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Einrichtung der Entwicklungsumgebung
 
