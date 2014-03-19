@@ -398,7 +398,7 @@ module.exports = function(grunt) {
     grunt.registerTask( 'build-css', [
         'clean:css',
         'less',
-        //'autoprefixer',
+        'autoprefixer',
         //'csslint'
     ]);
     grunt.registerTask( 'build-js', [
