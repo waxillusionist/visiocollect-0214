@@ -10,6 +10,7 @@
     $(window).load ->
         if $.skrollr
             $.skrollr.refresh()
+        $(document).trigger 'scroll.mainNavbarFix'
 
     #--- Begin: domready
 
