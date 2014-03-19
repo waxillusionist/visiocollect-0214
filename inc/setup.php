@@ -38,6 +38,8 @@ function vc_setup() {
     add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 380, 0, false );
     add_image_size( 'thumb_ratio', 380, 0, false );
+    add_image_size( 'fullscreen', 1600, 0, false );
+
 
     // register menus
     register_nav_menus(array(
