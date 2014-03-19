@@ -12,8 +12,8 @@ function vc_opengraph() {
 
     // default data
     $ogp_data['url']          = home_url( '/' );
-    $ogp_data['site']         = trim( get_bloginfo( 'name', 'display' ) );
-    $ogp_data['title']        = $ogp_data['site'];
+    $ogp_data['site_name']    = trim( get_bloginfo( 'name', 'display' ) );
+    $ogp_data['title']        = $ogp_data['site_name'];
     $ogp_data['description']  = trim( get_bloginfo( 'description', 'display' ) );
     $ogp_data['locale']       = preg_replace( '/-/', '_', get_bloginfo( 'language', 'display' ) );
     $ogp_data['image']        = $ogp_data['url'].'logo-250x250.png';
@@ -25,8 +25,8 @@ function vc_opengraph() {
         $post = get_queried_object();
         $post_title = apply_filters( 'the_title', $post->post_title );
         $post_descr = apply_filters( 'the_content', $post->post_excerpt ? $post->post_excerpt : $post->post_content );
-        $post_img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ogp' );
-        $ogp_data['site'] .= ' &mdash; '.$ogp_data['description'];
+        $post_img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' );
+        $ogp_data['site_name'] .= ' &mdash; '.$ogp_data['description'];
         $ogp_data['title'] = trim( strip_tags( $post_title ) );
         $ogp_data['description'] = trim( strip_tags( $post_descr ) );
         $ogp_data['url'] = get_permalink( $post->ID );
@@ -37,7 +37,7 @@ function vc_opengraph() {
 
     // process text values
     $ogp_textvalues = array(
-        &$ogp_data['site'],
+        &$ogp_data['site_name'],
         &$ogp_data['title'],
         &$ogp_data['description']
     );

@@ -9,7 +9,7 @@ $body_attributes = isset($body_attributes) && !empty($body_attributes) ? ' '.$bo
 $body_class = isset($body_class) && !empty($body_class) ? ' '.$body_class : '';
 
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?> prefix="og: http://ogp.me/ns#">
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
