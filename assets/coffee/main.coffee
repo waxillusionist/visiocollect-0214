@@ -114,8 +114,7 @@
                             cols[shortest_col][1] += $this.outerHeight() + Math.round( $this.width() * parseInt($thumb.attr('height')) / parseInt($thumb.attr('width')) )
                             $thumb.show()
                         else
-                            cols[shortest_col][1] += $this
-                        cols[shortest_col][1] += if $this.hasClass('with-thumb') then $this.height() + parseInt($this.find('.entry-thumb').attr('height')) else $this.height()
+                            cols[shortest_col][1] += $this.outerHeight()
                     if $.skrollr
                         $.skrollr.refresh()
             .trigger 'resize.blogGrid'
