@@ -42,9 +42,7 @@
             background: transparent url('../img/social-icons.png') 0 0 no-repeat;
             background-size: 40px 40px;
             box-shadow: 0 0 2px @vc_gray;
-            .transition-property( background-position-y );
-            .transition-duration( .1s );
-            .transition-timing-function( ease-in-out );
+            transition: background-position-y .1s ease-in-out;
 
             &:hover, &:active {
                 background-position-y: -20px;

@@ -73,12 +73,9 @@
     .navbar-nav {
 
         > li {
-            .transition-duration(.4s);
-            .transition-property(transform);
 
-            > a {
-                .transition-duration(.4s);
-                .transition-property(transform);
+            &, > a {
+                transition: transform .4s ease-in-out;
             }
 
             @media (min-width: @screen-sm-min) {
