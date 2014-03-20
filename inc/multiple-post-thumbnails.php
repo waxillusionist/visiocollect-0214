@@ -41,7 +41,7 @@ else {
        Multiple post thumbnail definitions
        ========================================================================== */
 
-    $types = array( 'post', 'page' );
+    $types = array( 'post', 'page', 'teaser' );
     foreach($types as $type) {
         new MultiPostThumbnails(array(
             'label' => 'Parallax Bild',
