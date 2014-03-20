@@ -22,7 +22,7 @@ define( 'THEME_JQUERY_VERSION', '1.11.0' );
 foreach( array(
     'inc/setup.php',
     'inc/contactform.php',
-    'inc/ops-redirect.php',
+    'inc/frontpage-redirect.php',
     'inc/cleanup.php',
     'inc/relative-urls.php',
     'inc/custom-post-types.php',

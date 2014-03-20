@@ -1,10 +1,6 @@
 <?php
-/*
-Template Name: One Page Scroller
-*/
-
 /* =============================================================================
-   TEMPLATE: Custom Page "One Page Scroller"
+   TEMPLATE: Frontpage
    ========================================================================== */
 
 global $body_attributes;

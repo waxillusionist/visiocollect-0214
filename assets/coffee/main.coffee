@@ -270,9 +270,9 @@
                 click: ->
                     $(this).blur()
 
-        #--- OnePageScroller - prepare for Bootstrap scrollspy
+        #--- Frontpage - prepare for Bootstrap scrollspy
 
-        $('body.page-template-custompage-onepagescroller-php').each ->
+        $('body.home').each ->
             $navas = $(this).find '.navbar-nav>li>a'
             $containers = $(this).find '[data-ops]'
             $containers.each (i) ->
