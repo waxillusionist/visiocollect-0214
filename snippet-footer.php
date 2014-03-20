@@ -14,3 +14,4 @@
         </div>
     </div>
 </div>
+<a class="top-link" href="#top-of-page"><span class="glyphicon glyphicon-chevron-up"></span></a>

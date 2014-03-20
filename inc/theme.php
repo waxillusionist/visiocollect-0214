@@ -13,7 +13,7 @@ function vc_content_nav() {
         $next_url = $next_link ? explode('"',$next_link)[1] : false;
         $prev_tag = $prev_url ? 'a' : 'span';
         $next_tag = $next_url ? 'a' : 'span';
-        echo '<div class="pagination-links" role="navigation">'.
+        echo '<div class="pagination" role="navigation">'.
             '<'.$next_tag.( $next_url ? ' href="'.$next_url.'"' : '' ).' class="pagination-link next" title="&Auml;ltere Beitr&auml;ge"><span class="glyphicon glyphicon-chevron-left"></span></'.$next_tag.'> '.
             '<'.$prev_tag.( $prev_url ? ' href="'.$prev_url.'"' : '' ).' class="pagination-link prev" title="Neuere Beitr&auml;ge"><span class="glyphicon glyphicon-chevron-right"></span></'.$prev_tag.'>'.
             '</div>';

@@ -220,50 +220,31 @@
 }
 
 /* =============================================================================
-   Index Pagination
+   Pagination
    ========================================================================== */
 
-@pagination_size: 60px;
-
-.pagination-links {
-    text-align: justify;
-    width: 100%;
-    .text-zero;
-
-    &:after {
-        content: '';
-        width: 100%;
-        display: inline-block;
-    }
+.pagination {
 
     .pagination-link {
-        font-size: ( @pagination_size * .6 );
-        text-align: center;
-        color: #fff;
-        .transition-duration(.4s);
-        .transition-transform(transform);
+        .square-button;
+        position: fixed;
+        top: (@navbar-height + 20);
 
-        &, .glyphicon:before {
-            display: inline-block;
-            width: @pagination_size;
-            height: @pagination_size;
-            line-height: @pagination_size;
+        &.prev {
+            right: 20px;
         }
+
+        &.next {
+            left: 20px;
+        }
+
     }
 
     span.pagination-link {
         opacity: 0;
     }
 
-    a.pagination-link {
-        text-decoration: none;
-        background: @vc_gray;
 
-        &:hover {
-            background: @vc_blue;
-        }
-
-    }
 
 }
 

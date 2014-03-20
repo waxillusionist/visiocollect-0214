@@ -19,3 +19,4 @@ $body_class = isset($body_class) && !empty($body_class) ? ' '.$body_class : '';
     <?php wp_head(); ?>
 </head>
 <body <?php body_class($body_class); echo $body_attributes; ?>>
+<div id="top-of-page"></div>

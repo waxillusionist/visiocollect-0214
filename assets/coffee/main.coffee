@@ -91,10 +91,10 @@
 
         $('.blog-grid').each ->
             $container = $(this)
-            $articles = $container.find('article')
             $w = $(window)
             $w.on
                 'resize.blogGrid': ->
+                    $articles = $container.find('article')
                     ww = $w.width()
                     colcount = if ww<768 then 1 else ( if ww<992 then 2 else 3 )
                     cols = []
@@ -118,6 +118,13 @@
                     if $.skrollr
                         $.skrollr.refresh()
             .trigger 'resize.blogGrid'
+
+        #--- load on scroll
+
+        $('.blog-grid').loadOnScroll({
+            complete: ->
+                $(window).trigger('resize.blogGrid')
+        });
 
         #--- ekko Lightbox
 

@@ -195,7 +195,7 @@ module.exports = function(grunt) {
 
         coffee: {
             options: {
-                separator: 'linefeed',
+                separator: '\n',
                 bare: true,
                 join: false,
                 sourceMap: true
@@ -203,6 +203,7 @@ module.exports = function(grunt) {
             compile: {
                 files: {
                     'assets/js/scripts.js': [
+                        'assets/coffee/loadonscroll.coffee',
                         'assets/coffee/main.coffee'
                     ]
                 }

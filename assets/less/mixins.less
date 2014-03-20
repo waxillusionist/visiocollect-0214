@@ -10,18 +10,57 @@
     font: ~'@{font-size-base}/@{line-height-base}' @font-family-base;
 }
 
-
-
 /* =============================================================================
-   Transition timing function
+   Square button
    ========================================================================== */
 
-.transition-timing-function( @transition-timing-function ) {
-    -webkit-timing-function: @transition-timing-function;
-            timing-function: @transition-timing-function;
+@square-button-size: 60px;
+
+.square-button() {
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    background: @vc_gray;
+    transition: background-color .1s ease-in-out;
+
+    .screen({
+        font-size: ( @square-button-size * .7 * .6 );
+
+        &, .glyphicon:before {
+            width: (@square-button-size * .7);
+            height: (@square-button-size * .7);
+            line-height: (@square-button-size * .7);
+        }
+
+    },{
+        font-size: ( @square-button-size * .8 * .6 );
+
+        &, .glyphicon:before {
+            width: (@square-button-size * .8);
+            height: (@square-button-size * .8);
+            line-height: (@square-button-size * .8);
+        }
+
+    },{
+        font-size: ( @square-button-size * .6 );
+
+        &, .glyphicon:before {
+            width: @square-button-size;
+            height: @square-button-size;
+            line-height: @square-button-size;
+        }
+
+    });
+
+    &:hover {
+        background: @vc_blue;
+        color: #fff;
+    }
+
+    &, .glyphicon:before {
+        display: inline-block;
+    }
 }
-
-
 
 /* =============================================================================
    Grayscale images
@@ -36,8 +75,6 @@
     filter: url('../img/grayscale.svg#off');
     -webkit-filter: grayscale(0);
 }
-
-
 
 /* =============================================================================
    Multi-level ordered list with hierarchical index
