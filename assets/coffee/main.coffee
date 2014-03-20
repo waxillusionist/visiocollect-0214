@@ -242,8 +242,9 @@
                         if $.skrollr
                             $.skrollr.refresh()
             $('.mixitup-controls').find('a').on
-                click: ->
-                    return false
+                click: (ev) ->
+                    ev.preventDefault()
+                    return
 
         #--- Contact form handler
 

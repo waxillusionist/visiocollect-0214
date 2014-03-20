@@ -28,7 +28,7 @@ function vc_shortcode_spektrum( $atts, $content=null ) {
     $html = '<ul class="mixitup-controls">'.
         '<li class="filter" data-filter="all"><a href="'.home_url('/spektrum/').'">Alle</a></li>';
     foreach( $cats as $i => $cat )
-        $html .= '<li class="filter" data-filter=".cat'.$cat->term_id.'"><a href="'.home_url('/spektrum_category/').$cat->slug.'/">'.$cat->name.'</a></li>';
+        $html .= '<li class="filter" data-filter=".cat'.$cat->term_id.'"><a href="'.home_url('/spektrum-category/').$cat->slug.'/">'.$cat->name.'</a></li>';
     $html .= '</ul><div class="mixitup">';
     foreach( $items as $i => $item ) {
         $cat_ids = wp_get_object_terms( array($item->ID), 'spektrum-category', array('fields'=>'ids') );
