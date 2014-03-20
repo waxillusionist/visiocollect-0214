@@ -12,13 +12,11 @@
     background-color: transparent;
     background-size: cover;
 
-    @media (max-width: @screen-xs-max) {
+    .screen({
         height: 240px;
-    }
-
-    @media (min-width: @screen-sm-min) {
+    },{
         height: 400px;
-    }
+    });
 
 }
 
@@ -42,13 +40,11 @@ a.external {
 p.lead {
     font-weight: 300;
 
-    @media (max-width: @screen-xs-max) {
+    .screen({
         margin-bottom: ( @line-height-computed * 2 );
-    }
-
-    @media (min-width: @screen-sm-min) {
+    },{
         margin-bottom: ( @line-height-computed * 3 );
-    }
+    });
 }
 
 kbd {

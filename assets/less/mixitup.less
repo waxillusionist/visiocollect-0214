@@ -16,17 +16,13 @@
     .mix, .gap {
         display: inline-block;
 
-        @media (max-width: @screen-xs-max) {
+        .screen({
             width: 50%;
-        }
-
-        @media (min-width: @screen-sm-min) {
+        },{
             width: 33%;
-        }
-
-        @media (min-width: @screen-md-min) {
+        },{
             width: 25%;
-        }
+        });
 
     }
 

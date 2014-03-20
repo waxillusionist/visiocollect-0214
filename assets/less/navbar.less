@@ -60,9 +60,9 @@
         background: transparent url('../img/vc-logo.png') left center no-repeat;
         min-width:185px;
 
-        @media (max-width: @screen-xs-max) {
+        .screen-xs({
             margin-left: 5px;
-        }
+        });
 
         span {
             .sr-only;
@@ -78,7 +78,7 @@
                 transition: transform .4s ease-in-out;
             }
 
-            @media (min-width: @screen-sm-min) {
+            .screen-sm-min({
 
                 > a {
                     border-top: 2px transparent solid;
@@ -92,7 +92,7 @@
                     }
                 }
 
-            }
+            });
 
             &.active {
 

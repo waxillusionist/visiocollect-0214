@@ -116,13 +116,11 @@ h1, h2, h3, h4, h5, h6 {
 
         &:before {
 
-            @media (max-width: @screen-xs-max) {
+            .screen({
                 margin-top: ( @line-height-computed * 2 );
-            }
-
-            @media (min-width: @screen-sm-min) {
+            },{
                 margin-top: ( @line-height-computed * 3 );
-            }
+            });
 
         }
 
