@@ -10,7 +10,7 @@
     $(window).load ->
         if $.skrollr
             $.skrollr.refresh()
-        $(document).trigger 'scroll.mainNavbarFix'
+        $(document).trigger 'resize.footerfix'
 
     #--- Begin: domready
 
@@ -123,7 +123,10 @@
 
         $('.blog-grid').loadOnScroll({
             complete: ->
-                $(window).trigger('resize.blogGrid')
+                $(window).trigger 'resize.blogGrid'
+                if $.skrollr
+                    $.skrollr.refresh()
+                $(document).trigger 'resize.footerfix'
         });
 
         #--- ekko Lightbox
@@ -268,7 +271,7 @@
                                 $form.append('<div class="alert alert-success"><span class="glyphicon glyphicon-ok pull-right"></span>'+data.success+'</div>')
                                     #.find('input[type="text"],input[type="tel"],input[type="email"],textarea').val('')
                         error: (XMLHttpRequest, textStatus, errorThrown) ->
-                            console.debug(textStatus)
+                            # console.debug(textStatus)
                         complete: ->
                             $form.removeClass('loading')
                     return false
