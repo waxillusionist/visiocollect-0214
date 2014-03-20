@@ -30,6 +30,74 @@ html, body {
 }
 
 /* =============================================================================
+   Teaser Carousel
+   ========================================================================== */
+
+#aktuelles {
+    position: relative;
+    bottom: @navbar-height;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: #000 url('../img/logo-animation-white.gif') center center no-repeat;
+
+    .carousel-inner,
+    .item,
+    .carousel-background {
+        height: 100%;
+    }
+
+    .carousel-inner {
+    }
+
+    .item {
+        width: 100%;
+
+        &.active,
+        &.next {
+            display: table;
+        }
+
+    }
+
+    .item-inner {
+        display: table-cell;
+
+        .screen-sm-min({
+            vertical-align: middle;
+        });
+
+    }
+
+    .carousel-background {
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        background-position: 50% 0;
+        background-attachment: fixed;
+        background-repeat: repeat;
+    }
+
+    .carousel-caption {
+        .container;
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        padding: 0;
+        margin: 0 auto;
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    }
+
+}
+
+/* =============================================================================
    GoogleMaps
    ========================================================================== */
 
@@ -89,19 +157,6 @@ html, body {
     }
 
 }
-
-
-
-/* =============================================================================
-   Loading indicator wrapper for fullscreen container
-   ========================================================================== */
-
-.loading-wrapper {
-    background: #000 url('../img/logo-animation-white.gif') center center no-repeat;
-    height: 100%;
-}
-
-
 
 /* =============================================================================
    Background Image and Parallax Containers

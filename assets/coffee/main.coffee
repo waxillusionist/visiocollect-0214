@@ -120,6 +120,15 @@
                         $.skrollr.refresh()
             .trigger 'resize.blogGrid'
 
+        #--- fix Teaser size
+
+        $('#aktuelles').each ->
+            $this = $(this)
+            $(window).on
+                'resize.teaser': ->
+                    $this.height($(window).height()-50)
+            .trigger('resize.teaser')
+
         #--- load on scroll
 
         $('.blog-grid').loadOnScroll({
