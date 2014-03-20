@@ -27,10 +27,10 @@ function vc_custom_posts() {
             )
         )
     );
-    register_taxonomy( 'spektrum_category', 'spektrum', array(
+    register_taxonomy( 'spektrum-category', 'spektrum', array(
         'hierarchical' => true
     ));
-    register_taxonomy_for_object_type( 'spektrum_category', 'spektrum' );
+    register_taxonomy_for_object_type( 'spektrum-category', 'spektrum' );
 
 }
 add_action( 'init', 'vc_custom_posts' );

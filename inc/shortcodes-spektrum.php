@@ -22,17 +22,16 @@ function vc_shortcode_spektrum( $atts, $content=null ) {
         'order'                    => 'ASC',
         'hide_empty'               => true,
         'hierarchical'             => false,
-        'taxonomy'                 => 'spektrum_category',
+        'taxonomy'                 => 'spektrum-category',
         'pad_counts'               => true
     ));
-    // var_dump($items,$cats);
     $html = '<ul class="mixitup-controls">'.
         '<li class="filter" data-filter="all"><a href="'.home_url('/spektrum/').'">Alle</a></li>';
     foreach( $cats as $i => $cat )
         $html .= '<li class="filter" data-filter=".cat'.$cat->term_id.'"><a href="'.home_url('/spektrum_category/').$cat->slug.'/">'.$cat->name.'</a></li>';
     $html .= '</ul><div class="mixitup">';
     foreach( $items as $i => $item ) {
-        $cat_ids = wp_get_object_terms( array($item->ID), 'spektrum_category', array('fields'=>'ids') );
+        $cat_ids = wp_get_object_terms( array($item->ID), 'spektrum-category', array('fields'=>'ids') );
         $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($item->ID), 'thumbnail' );
         $html .= '<div class="mix cat'.join(' cat',$cat_ids).'" data-sort="'.$i.'" data-link="'.get_permalink($item->ID).'">'.
                 '<figure>'.
