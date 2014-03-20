@@ -9,7 +9,7 @@ $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'thumb_ra
 $post_class = 'post-excerpt'.( $thumb ? ' with-thumb' : '' );
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('hentry '.$post_class); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('hentry '.$post_class); ?> data-index="<?php the_time('U'); ?>">
     <header class="entry-header">
         <?php if($thumb) { ?>
             <img class="entry-thumb" src="<?php echo $thumb[0] ?>" width="<?php echo $thumb[1] ?>" height="<?php echo $thumb[2] ?>" alt="<?php the_title_attribute(); ?>">

@@ -94,7 +94,8 @@
             $w = $(window)
             $w.on
                 'resize.blogGrid': ->
-                    $articles = $container.find('article')
+                    $articles = $container.find('article').sort (a,b) ->
+                        parseInt($(a).data('index')) < parseInt($(b).data('index'))
                     ww = $w.width()
                     colcount = if ww<768 then 1 else ( if ww<992 then 2 else 3 )
                     cols = []
