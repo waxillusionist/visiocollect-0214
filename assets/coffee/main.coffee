@@ -176,10 +176,10 @@
             click: ->
                 if location.pathname.replace(/^\//,'')==this.pathname.replace(/^\//,'') and location.hostname==this.hostname
                     $target = $(this.hash)
-                    $target = if $target.length then target else $('[name=' + this.hash.slice(1) +']')
+                    $target = if $target.length then $target else $('[name=' + this.hash.slice(1) +']')
                     if $target.length
                         $('html,body').animate
-                            scrollTop: target.offset().top
+                            scrollTop: $target.offset().top
                         , 500
                         return false
         , 'a[href*=#]:not([href=#])'
