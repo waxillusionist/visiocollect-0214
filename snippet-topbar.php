@@ -8,7 +8,8 @@ global $topbar_fluid;
 $topbar_fluid = isset($topbar_fluid)   ? $topbar_fluid   : false;
 
 ?>
-<div id="topbar" role="navigation" class="main-navbar navbar fix-top<?php
+<div id="topbar" role="navigation" class="main-navbar navbar fix-<?php
+    echo is_front_page()?'bottom':'top';
     echo ( $topbar_fluid   ? ' fluid'   : ' fixed-width' );
     ?>">
     <div>
