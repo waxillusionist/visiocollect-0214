@@ -23,26 +23,15 @@ $topbar_fluid = isset($topbar_fluid)   ? $topbar_fluid   : false;
         </div>
         <div class="navbar-main navbar-collapse collapse">
             <?php
-            if( has_nav_menu('topbar-left') ) {
+            if( has_nav_menu('topbar-right') )
                 wp_nav_menu( array(
-                    'theme_location'    => 'topbar-left',
+                    'theme_location'    => 'topbar-right',
                     'depth'             => 2,
                     'container'         => '',
                     'container_class'   => '',
-                    'menu_class'        => 'nav navbar-nav',
+                    'menu_class'        => 'nav navbar-nav navbar-right',
                     'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
                     'walker'            => new wp_bootstrap_navwalker())
-                );
-            }
-            if( has_nav_menu('topbar-right') )
-            wp_nav_menu( array(
-                'theme_location'    => 'topbar-right',
-                'depth'             => 2,
-                'container'         => '',
-                'container_class'   => '',
-                'menu_class'        => 'nav navbar-nav navbar-right',
-                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                'walker'            => new wp_bootstrap_navwalker())
             );
             ?>
         </div>

@@ -43,7 +43,6 @@ function vc_setup() {
 
     // register menus
     register_nav_menus(array(
-        'topbar-left' => __('TopBar Left Menu',THEME_TEXTDOMAIN),
         'topbar-right' => __('TopBar Right Menu',THEME_TEXTDOMAIN)
     ));
 
