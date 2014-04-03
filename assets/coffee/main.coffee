@@ -6,15 +6,17 @@
     #--- Global vars
 
     $.skrollr = null
+    $window = $(window)
+    $document = $(document)
 
-    $(window).load ->
+    $window.load ->
         if $.skrollr
             $.skrollr.refresh()
-        $(document).trigger 'resize.footerfix'
+        $document.trigger 'resize.footerfix'
 
     #--- Begin: domready
 
-    $(document).ready ->
+    $document.ready ->
 
         #--- Open external links in new window
 
@@ -26,13 +28,13 @@
 
         $('.main-navbar').each ->
             $el = $(this)
-            $(document).on
+            $document.on
                 'scroll.mainNavbarFix': ->
                     $el.removeClass 'fixed fix-none fix-bottom fix-top dropup'
-                    s = $(document).scrollTop()
+                    s = $document.scrollTop()
                     el_top = $el.offset().top
                     el_height = $el.outerHeight false
-                    wh = $(window).height()
+                    wh = $window.height()
                     # if navbar default position is not on top of document
                     if el_top > 0
                         # if navbar position is after current visible section
@@ -55,19 +57,18 @@
                     else
                         $el.addClass 'fix-top'
             .trigger 'scroll.mainNavbarFix'
-            $(window).on
+            $window.on
                 'resize.mainNavbarFix': (ev) ->
-                    $(document).trigger 'scroll.mainNavbarFix'
+                    $document.trigger 'scroll.mainNavbarFix'
 
         #--- Grid Gallery
 
         $('.gallery-style-grid').each ->
             $gallery = $(this)
             $items = $gallery.find '.gallery-item'
-            $w = $(window)
-            $w.on
+            $window.on
                 'resize.gridGallery': ->
-                    ww = $w.width()
+                    ww = $window.width()
                     colcount = if ww<768 then 1 else ( if ww<992 then 2 else 3 )
                     cols = []
                     $items.detach()
@@ -91,12 +92,11 @@
 
         $('.blog-grid').each ->
             $container = $(this)
-            $w = $(window)
-            $w.on
+            $window.on
                 'resize.blogGrid': ->
                     $articles = $container.find('article').sort (a,b) ->
                         parseInt($(a).data('index')) < parseInt($(b).data('index'))
-                    ww = $w.width()
+                    ww = $window.width()
                     colcount = if ww<768 then 1 else ( if ww<992 then 2 else 3 )
                     cols = []
                     $articles.detach()
@@ -124,24 +124,23 @@
 
         $('#aktuelles').each ->
             $this = $(this)
-            $(window).on
+            $window.on
                 'resize.teaser': ->
-                    $this.height($(window).height()-50)
+                    $this.height($window.height()-50)
             .trigger('resize.teaser')
 
         #--- load on scroll
 
-        $('.blog-grid').loadOnScroll({
+        $('.blog-grid').loadOnScroll
             complete: ->
-                $(window).trigger 'resize.blogGrid'
+                $window.trigger 'resize.blogGrid'
                 if $.skrollr
                     $.skrollr.refresh()
-                $(document).trigger 'resize.footerfix'
-        });
+                $document.trigger 'resize.footerfix'
 
         #--- ekko Lightbox
 
-        $(document).on
+        $document.on
             click: ->
                 $(this).ekkoLightbox()
                 return false
@@ -149,11 +148,11 @@
 
         #--- Height fix for related containers
 
-        $(window).on
+        $window.on
             'resize.heightfix': ->
                 $els = $('[data-heightfix^="rel"]')
                 groups = {}
-                xsDisplay = $(window).width()<768
+                xsDisplay = $window.width()<768
                 $els.each ->
                     el = $(this).css 'min-height', 'auto'
                     elh = el.height()
@@ -177,13 +176,12 @@
 
         #--- Fix footer to bottom if document is shorter than window
 
-        $(window).on
+        $window.on
             'resize.footerfix': ->
                 $f = $('.global-footer')
-                if $f.length==1
+                if $f.length
                     $f.removeClass 'fixed'
-                    $w = $(window)
-                    wh = $w.height()
+                    wh = $window.height()
                     fh = $f.removeClass('fixed').offset().top + $f.outerHeight()
                     if wh>fh
                         $f.addClass 'fixed'
@@ -205,7 +203,7 @@
 
         #--- Parallax preparation for Skrollr
 
-        $(window).on
+        $window.on
             'resize.parallax': ->
                 $els = $('.parallax')
                 $els.each ->
@@ -220,7 +218,7 @@
 
         #--- ScrollScale preparation for Skrollr
 
-        if $(window).width()>=768
+        if $window.width()>=768
             $('.scrollscale').each ->
                 a = 0.75
                 b = 1.25
