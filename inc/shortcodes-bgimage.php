@@ -16,7 +16,7 @@ function vc_shortcode_bgimage( $atts, $content=null ) {
         'attachment' => '',
         'repeat' => '',
         'parallax' => false,
-        'multiplier' => '.5',
+        'multiplier' => '.25',
         'class' => ''
     ), $atts ) );
     $parallax = $parallax==='true';
@@ -53,7 +53,7 @@ function vc_shortcode_bgimage( $atts, $content=null ) {
         ( $repeat!=='' ? 'background-repeat:'.$repeat.';' : '' ).
         '"'.
         ( $parallax ?
-            ( $multiplier!=='' ? ' data-parallax-multiplier="'.$multiplier.'"' : '' )
+            ( $multiplier!=='' ? ' data-stellar-background-ratio="'.$multiplier.'"' : '' )
         :'').
         $html_omega;
     return $html;

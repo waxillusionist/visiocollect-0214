@@ -28,7 +28,7 @@ if( $teasers && count($teasers)>0 ) {
         $parallax_img = get_mpt_src('parallax','fullscreen',$post);
         array_push($indicators, '<li data-target="#aktuelles" data-slide-to="'.$i.'"'.($i==0?' class="active"':'').'></li>');
         array_push($contents, '<div class="item'.($i==0?' active':'').'"><div class="item-inner">'.
-            '<div class="carousel-background parallax" style="background-image:url(\''.$parallax_img[0].'\')"></div>'.
+            '<div class="carousel-background parallax" style="background-image:url(\''.$parallax_img[0].'\')" data-stellar-background-ratio="0.5"></div>'.
             '<div class="carousel-caption">'.apply_filters('the_content', $post->post_content).'</div>'.
             '</div></div>');
     }
@@ -64,7 +64,7 @@ if( $childposts->have_posts() ) {
 
         if( $parallax_img ) {
             ?>
-            <div class="bg-image parallax" style="background-image:url('<?php echo $parallax_img[0]; ?>');"></div>
+            <div class="bg-image parallax" style="background-image:url('<?php echo $parallax_img[0]; ?>');" data-stellar-background-ratio="0.25"></div>
             <?php
         }
         ?>

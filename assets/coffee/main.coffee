@@ -5,14 +5,14 @@
 
     #--- Global vars
 
-    $.skrollr = null
+    # $.skrollr = null
     $window = $(window)
     $document = $(document)
 
-    $window.load ->
-        if $.skrollr
-            $.skrollr.refresh()
-        $document.trigger 'resize.footerfix'
+    # $window.load ->
+    #     if $.skrollr
+    #         $.skrollr.refresh()
+    #     $document.trigger 'resize.footerfix'
 
     #--- Begin: domready
 
@@ -84,8 +84,8 @@
                             shortest_col = if shortest_col!=c and cols[c][1]<cols[shortest_col][1] then c else shortest_col
                         cols[shortest_col][0].append $('<li/>').append($this)
                         cols[shortest_col][1] += Math.round( $this.width() * parseInt($img.attr('height')) / parseInt($img.attr('width')) )
-                    if $.skrollr
-                        $.skrollr.refresh()
+                    # if $.skrollr
+                    #     $.skrollr.refresh()
             .trigger 'resize.gridGallery'
 
         #--- Blog Grid
@@ -116,8 +116,8 @@
                             $thumb.show()
                         else
                             cols[shortest_col][1] += $this.outerHeight()
-                    if $.skrollr
-                        $.skrollr.refresh()
+                    # if $.skrollr
+                    #     $.skrollr.refresh()
             .trigger 'resize.blogGrid'
 
         #--- fix Teaser size
@@ -134,8 +134,8 @@
         $('.blog-grid').loadOnScroll
             complete: ->
                 $window.trigger 'resize.blogGrid'
-                if $.skrollr
-                    $.skrollr.refresh()
+                # if $.skrollr
+                #     $.skrollr.refresh()
                 $document.trigger 'resize.footerfix'
 
         #--- ekko Lightbox
@@ -203,18 +203,24 @@
 
         #--- Parallax preparation for Skrollr
 
-        $window.on
-            'resize.parallax': ->
-                $els = $('.parallax')
-                $els.each ->
-                    h = $(this).height()
-                    m = if $(this).data('parallax-multiplier') then parseFloat($(this).data('parallax-multiplier')) else 0.5
-                    $(this).attr
-                        'data-bottom-top': 'background-position: 50% '+(h*m)+'px'
-                        'data-top-bottom': 'background-position: 50% -'+(h*m)+'px'
-                if $.skrollr
-                    $.skrollr.refresh()
-        .trigger 'resize.parallax'
+        if !Modernizr.touch
+            $.stellar
+                responsive: true
+                horizontalScrolling: false
+                horizontalOffset: 0
+                verticalOffset: 0
+        # $window.on
+        #     'resize.parallax': ->
+        #         $els = $('.parallax')
+        #         $els.each ->
+        #             h = $(this).height()
+        #             m = if $(this).data('parallax-multiplier') then parseFloat($(this).data('parallax-multiplier')) else 0.5
+        #             $(this).attr
+        #                 'data-bottom-top': 'background-position: 50% '+(h*m)+'px'
+        #                 'data-top-bottom': 'background-position: 50% -'+(h*m)+'px'
+        #         # if $.skrollr
+        #         #     $.skrollr.refresh()
+        # .trigger 'resize.parallax'
 
         #--- ScrollScale preparation for Skrollr
 
@@ -228,26 +234,26 @@
 
         #--- Skrollr
 
-        $.skrollr = skrollr.init
-            smoothScrolling: false
-            forceHeight: false
+        # $.skrollr = skrollr.init
+        #     smoothScrolling: false
+        #     forceHeight: false
 
         #--- MixItUp Spektrum
 
         $('.mixitup').each ->
             $mixitup = $(this)
-            # if !Modernizr.touch
-            $mixitup.find('.mix').each ->
-                img_url = $(this).find('.img img').attr('src')
-                $(this).find('figure').append([
-                    $('<div class="curtain-top" style="background-image:url(\''+img_url+'\')">')[0]
-                    $('<div class="curtain-bottom" style="background-image:url(\''+img_url+'\')">')[0]
-                ])
-            $mixitup.mixItUp
-                callbacks:
-                    onMixEnd: ->
-                        if $.skrollr
-                            $.skrollr.refresh()
+            if !Modernizr.touch
+                $mixitup.find('.mix').each ->
+                    img_url = $(this).find('.img img').attr('src')
+                    $(this).find('figure').append([
+                        $('<div class="curtain-top" style="background-image:url(\''+img_url+'\')">')[0]
+                        $('<div class="curtain-bottom" style="background-image:url(\''+img_url+'\')">')[0]
+                    ])
+            $mixitup.mixItUp()
+                # callbacks:
+                #     onMixEnd: ->
+                #         if $.skrollr
+                #             $.skrollr.refresh()
             $('.mixitup-controls').find('a').on
                 click: (ev) ->
                     ev.preventDefault()

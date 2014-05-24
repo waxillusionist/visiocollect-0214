@@ -27,6 +27,6 @@
 		"ekko-lightbox": "https://github.com/ashleydw/lightbox/archive/v3.1.1.tar.gz",
 		"mixitup": "patrickkunka/mixitup#latest",
 		"skrollr": "latest",
-		"skrollr-ie": "latest"
+		"skrollr-ie": "latest",
 	}
 }
