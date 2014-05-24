@@ -28,5 +28,6 @@
 		"mixitup": "patrickkunka/mixitup#latest",
 		"skrollr": "latest",
 		"skrollr-ie": "latest",
+		"jquery-waypoints": "latest"
 	}
 }
